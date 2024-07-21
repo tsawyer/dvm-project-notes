@@ -1,0 +1,15 @@
+[Unit]
+Description=DVM DFSI Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/opt/dvm/bin/dvmdfsi -c /opt/dvm/dfsi-xxxx.yml
+ExecStop=/bin/kill -s SIGTERM $MAINPID
+RestartSec=20s
+Restart=on-failure
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
