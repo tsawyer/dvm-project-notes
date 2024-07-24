@@ -1,9 +1,9 @@
 # DFSI for DVM V24
 
-Howto build and configure DFSI for use with the DVM V24 board.
+Howto build and configure DFSI for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment).
 
 Assumes:
-* You have a Debian 12 OS install with root access on a computer which the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment) will plug into. 
+* You have a Debian 12 OS install with root access on a computer which the DVM V24 board will plug into. 
 * There is a known working ENF for DFSI to login to either on this same or another computer. 
 
 ## Clone
@@ -11,7 +11,7 @@ Assumes:
 As root:
 
 ```
-apt install git g++
+apt install git g++ cmake
 cd /usr/src
 git clone https://github.com/DVMProject/dvmhost.git
 git clone https://github.com/tsawyer/dvm-project-notes.git
@@ -93,7 +93,7 @@ If that looks good then control-c out of dfsi.
 Install the service with these commands:
 
 ```
-cp /usr/src/dvm-project-notes/config/dvmdfsi.service `/etc/systemd/system/dvmdfsi.service
+cp /usr/src/dvm-project-notes/config/dvmdfsi.service /etc/systemd/system/dvmdfsi.service
 systemctl daemon-reload
 systemctl enable dvmdfsi.service
 systemctl start dvmdfsi.service
