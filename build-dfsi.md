@@ -36,11 +36,11 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
   * Under `network:` change `peerID: 1234` to a peer ID cordinated with your admin (may be you).
   * Under `network:` change `address: xxx.xxx.xxx.xxx` to the desired FNE IP address provided by your admin.
   * Under `network:` change `password: PASSWORD to the password provided by your admin.
-  * Under `serial:` change the `port: "/dev/ttyACM0"`. Find port with `ls -l /dev/ttyAMC`.
+  * Under `serial:` change the `port: "/dev/ttyACM0"`. To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyAMC`. 
  
 ## Testing
 
-Launch DFSI in the foreground `/opt/dvm/bin/dvmdfsi -f -c /opt/dvm/dfsi.yml`. You should see it login to the FNE after a few moment.
+Launch DFSI in the foreground `/opt/dvm/bin/dvmdfsi -f -c /opt/dvm/dfsi.yml`. You should see it login to the FNE after a few moments.
 
 ```
 I: 2024-07-24 11:01:24.686
