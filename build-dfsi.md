@@ -30,6 +30,8 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 
 ## V24 Firmware Compile
 
+Thanks to https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc
+
 On Debian and derivatives, the package you’re looking for is gcc-arm-none-eabi: `apt install gcc-arm-none-eabi`
 
 To find this out yourself in future install apt-file, update your indexes and use it to search for commands:
