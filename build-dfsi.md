@@ -28,11 +28,23 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 * The `make` command builds the project and may take a long time.
 * Finally do `make strip` and `make old_install`. This removes debug code and copies the project to `/opt/dvm`.
 
+## V24 Firmware Compile
+
+On Debian and derivatives, the package you’re looking for is gcc-arm-none-eabi: `apt install gcc-arm-none-eabi`
+
+To find this out yourself in future install apt-file, update your indexes and use it to search for commands:
+
+```
+apt install apt-file
+apt-file update
+apt-file search bin/arm-none-eabi-gcc
+```
+
 ## The steps below are obsolete!
 
 The DVM Project no longer builds dvmdfsi. DFSI has merged into dvmhost. 
 DVMHost support for DFSI requires V24 board FM 2.0. It's not in your board unless it's been flashed.
-This document will be updated once I get my STLink programmer and successfully flash a V24 board.    
+This document will be updated once I get my STLink programmer and successfully flash a V24 board. 
 
 ## Configuration
 
