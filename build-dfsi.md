@@ -28,6 +28,12 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 * The `make` command builds the project and may take a long time.
 * Finally do `make strip` and `make old_install`. This removes debug code and copies the project to `/opt/dvm`.
 
+## The steps below are obsolete!
+
+The DVM Project no longer builds dvmdfsi. DFSI has merged into dvmhost. 
+DVMHost support for DFSI requires V24 board FM 2.0. It's not in your board unless it's been flashed.
+This document will be updated once I get my STLink programmer and successfully flash a V24 board.    
+
 ## Configuration
 
 * Copy the configuration file `cp /usr/src/dvm-project-notes/config/dfsi.yml /opt/dvm/`.
