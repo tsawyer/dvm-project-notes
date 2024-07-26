@@ -1,10 +1,10 @@
-# DFSI for DVM V24
+# DVMHost for DVM V24
 
-Howto build and configure DFSI for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment).
+This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment).
 
 Assumes:
 * You have a Debian 12 OS install with root access on a computer which the DVM V24 board will plug into. 
-* There is a known working ENF for DFSI to login to either on this same or another computer. 
+* There is a known working ENF for DVMHost to login to either on this same or another computer. 
 
 ## Clone
 
@@ -18,7 +18,7 @@ git clone https://github.com/tsawyer/dvm-project-notes.git
 cd dvmhost
 ```
 
-## Compile and Install
+## Compile and Install DVMHost
 
 Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/dvmhost/blob/master/README.md).
 
@@ -28,19 +28,15 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 * The `make` command builds the project and may take a long time.
 * Finally do `make strip` and `make old_install`. This removes debug code and copies the project to `/opt/dvm`.
 
-## V24 Firmware Compile
+## Install ARM Toolchain and Compile V24 Firmware
 
-Thanks to https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc
+These steps are optional. The pre-built [binary FW](https://github.com/DVMProject/dvmv24/releases) may already be current.
 
-On Debian and derivatives, the package you’re looking for is gcc-arm-none-eabi: `apt install gcc-arm-none-eabi`
+The ARM toolchain is needed to build the latest firmware. Thanks to [Stack Exchange](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc) for this: On Debian and derivatives, 
+the package you’re looking for is gcc-arm-none-eabi: `apt install gcc-arm-none-eabi`
 
-To find this out yourself in future install apt-file, update your indexes and use it to search for commands:
+With the ARM tool chain installed, build the firmware per [these instructions](https://github.com/DVMProject/dvmv24?tab=readme-ov-file#building-the-latest-firmware).
 
-```
-apt install apt-file
-apt-file update
-apt-file search bin/arm-none-eabi-gcc
-```
 
 ## The steps below are obsolete!
 
