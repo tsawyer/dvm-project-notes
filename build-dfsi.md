@@ -34,7 +34,7 @@ This complete the build of DVMHost. Next
 
 These steps are from [github.com/DVMProject/dvmv24](https://github.com/DVMProject/dvmv24). Read that first then come back here.
 If your DVM V24 board has current firmware skip down to **DVM Host Configuration**.
-If the pre-built [binary firmware](https://github.com/DVMProject/dvmv24/releases) is current skip down to **Flash V24 Board Firmware**
+If the pre-built [binary firmware](https://github.com/DVMProject/dvmv24/releases) is current skip down to **Flash Firmware**
 
 ### Compile Firmware
 The ARM toolchain is needed to build the latest firmware. On Debian and derivatives, 
