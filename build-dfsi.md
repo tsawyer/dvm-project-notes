@@ -37,7 +37,7 @@ If your DVM V24 board has current firmware skip down to **DVM Host Configuration
 If the pre-built [binary firmware](https://github.com/DVMProject/dvmv24/releases) is current skip down to **Flash V24 Board Firmware**
 
 ### Compile Firmware
-The ARM toolchain is needed to build the latest firmware.  for this: On Debian and derivatives, 
+The ARM toolchain is needed to build the latest firmware. On Debian and derivatives, 
 the package you’re looking for is gcc-arm-none-eabi:  Thank you [Stack Exchange](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc).
 
 ```
