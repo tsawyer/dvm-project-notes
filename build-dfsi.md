@@ -53,7 +53,7 @@ cd dvm24/fw
 make
 ```
 
-### Flash V24 Board Firmware
+### Flash Firmware
 
 To flash the V24 board firmware a STlink programmer is needed. Programmers are inexpensive and available from Amazon, DigiKey, Mouser, eBay and etc. 
 
