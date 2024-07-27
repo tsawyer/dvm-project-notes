@@ -30,7 +30,7 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 
 This complete the build of DVMHost. Next  
 
-## Compile V24 Board Firmware
+## Compile and Flash V24 Board Firmware
 
 These steps are from [github.com/DVMProject/dvmv24](https://github.com/DVMProject/dvmv24). Read that first then come back here.
 If your DVM V24 board has current firmware skip down to **DVM Host Configuration**.
