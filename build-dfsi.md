@@ -1,6 +1,6 @@
-# DVMHost for DVM V24
+# DVMHost for DVM V24 Board 
 
-This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment).
+This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment) on a Quantar repeater.
 
 Assumes:
 * You have a Debian 12 OS install with root access on a computer which the DVM V24 board will plug into. 
@@ -28,14 +28,41 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 * The `make` command builds the project and may take a long time.
 * Finally do `make strip` and `make old_install`. This removes debug code and copies the project to `/opt/dvm`.
 
-## Install ARM Toolchain and Compile V24 Firmware
+This complete the build of DVMHost. Next  
 
-These steps are optional. The pre-built [binary FW](https://github.com/DVMProject/dvmv24/releases) may already be current.
+## Compile V24 Board Firmware
 
-The ARM toolchain is needed to build the latest firmware. Thanks to [Stack Exchange](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc) for this: On Debian and derivatives, 
-the package you’re looking for is gcc-arm-none-eabi: `apt install gcc-arm-none-eabi`
+These steps are from [github.com/DVMProject/dvmv24](https://github.com/DVMProject/dvmv24). Read that first then come back here.
+If your DVM V24 board has current firmware skip down to **DVM Host Configuration**.
+If the pre-built [binary firmware](https://github.com/DVMProject/dvmv24/releases) is current skip down to **Flash V24 Board Firmware**
 
-With the ARM tool chain installed, build the firmware per [these instructions](https://github.com/DVMProject/dvmv24?tab=readme-ov-file#building-the-latest-firmware).
+### Compile Firmware
+The ARM toolchain is needed to build the latest firmware.  for this: On Debian and derivatives, 
+the package you’re looking for is gcc-arm-none-eabi:  Thank you [Stack Exchange](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc).
+
+```
+apt install gcc-arm-none-eabi
+```
+
+With the ARM tool chain installed, build the firmware:
+
+```
+cd /usr/src
+git clone https://github.com/DVMProject/dvmv24.git
+cd dvm24/fw
+make
+```
+
+### Flash V24 Board Firmware
+
+To flash the V24 board firmware a STlink programmer is needed. Programmers are inexpensive and available from Amazon, DigiKey, Mouser, eBay and etc. 
+
+Connect the programmer to the V24 board. The V24 board pins are labled on the underside of the circuit board. 
+
+Assuming the firmware was built as above: 
+```
+make flash
+```
 
 
 ## The steps below are obsolete!
@@ -44,7 +71,7 @@ The DVM Project no longer builds dvmdfsi. DFSI has merged into dvmhost.
 DVMHost support for DFSI requires V24 board FM 2.0. It's not in your board unless it's been flashed.
 This document will be updated once I get my STLink programmer and successfully flash a V24 board. 
 
-## Configuration
+## DMV Host Configuration
 
 * Copy the configuration file `cp /usr/src/dvm-project-notes/config/dfsi.yml /opt/dvm/`.
 * Edit the configuration file `nano /opt/dvm/dfsi.yml`.
