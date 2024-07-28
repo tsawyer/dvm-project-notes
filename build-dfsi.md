@@ -108,7 +108,7 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 * Under `network:`
   * Change `id:` to your call sign-ssID or site name.
   * Change `address: xxx.xxx.xxx.xxx` to the desired FNE IP address provided by your admin.
-  * Change `password: PASSWORD to the password provided by your admin.
+  * Change `password:` to the password provided by your admin.
 * Under `protocols:`
   * Under `dmr:` change `enable:` to false.
   * Under `p25:` insure `enable:` is true.
@@ -118,10 +118,11 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
   * Under `info:` optionally change the values.
 * Under `cwid:`
   * Change `enable:` to false.
-* Under `modem:` under `protocol:`
-  * Change `type:` to uart
-  * Change `mode:` to dfsi
+* Under `modem:`
+  * Under `protocol:` change `type:` to uart.
+  * Under `protocol:` change `mode:` to dfsi.
   * Under `uart:` change the `port: "/dev/ttyACM0"`. To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`. 
+  * Under `dfsi:` change `diu:` to false.
  
 ## Testing
 
