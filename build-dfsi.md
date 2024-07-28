@@ -18,6 +18,13 @@ git clone https://github.com/tsawyer/dvm-project-notes.git
 cd dvmhost
 ```
 
+or to update
+
+```
+cd /usr/src/dvmhost
+git pull
+```
+
 ## Compile and Install DVMHost
 
 Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/dvmhost/blob/master/README.md).
@@ -28,13 +35,15 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 * The `make` command builds the project and may take a long time.
 * Finally do `make strip` and `make old_install`. This removes debug code and copies the project to `/opt/dvm`.
 
-This complete the build of DVMHost. Next  
+This complete the build of DVMHost.
 
 ## Compile and Flash V24 Board Firmware
 
-These steps are from [github.com/DVMProject/dvmv24](https://github.com/DVMProject/dvmv24). Read that first then come back here.
+These steps are from [github.com/DVMProject/dvmv24](https://github.com/DVMProject/dvmv24). You should read it.
+
 If your DVM V24 board has current firmware skip down to **DVM Host Configuration**.
-If the pre-built [binary firmware](https://github.com/DVMProject/dvmv24/releases) is current skip down to **Flash Firmware**
+If the pre-built [binary firmware](https://github.com/DVMProject/dvmv24/releases) is current skip down to **Flash Firmware**.
+Chances are neither is true and you'll need to build and flash new firmware.
 
 ### Compile Firmware
 The ARM toolchain is needed to build the latest firmware. On Debian and derivatives, 
@@ -57,27 +66,46 @@ make
 
 To flash the V24 board firmware a STlink programmer is needed. Programmers are inexpensive and available from Amazon, DigiKey, Mouser, eBay and etc. 
 
-Connect the programmer to the V24 board. The V24 board pins are labled on the underside of the circuit board. 
+Connect four wires from the programmer to the V24 board. The V24 board pins are **labled on the underside** of the circuit board. 
+ * 3.3 Volts
+ * GND
+ * DIO
+ * CLK
 
-`apt install stlink-tools`
+Install the flash program: `apt install stlink-tools`
 
 Assuming the firmware was built as above: 
 ```
+/usr/src/dvmv24/fw/
 make flash
 ```
-
-
-## The steps below are obsolete!
-
-The DVM Project no longer builds dvmdfsi. DFSI has merged into dvmhost. 
-DVMHost support for DFSI requires V24 board FM 2.0. It's not in your board unless it's been flashed.
-This document will be updated once I get my STLink programmer and successfully flash a V24 board. 
+You should see
+```
+st-flash write build/DVM-V24-stm32f103.bin 0x08000000
+st-flash 1.7.0
+2024-07-27T18:35:18 INFO common.c: F1xx Medium-density: 20 KiB SRAM, 64 KiB flash in at least 1 KiB pages.
+file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, stlink checksum: 0x0034350d
+2024-07-27T18:35:18 INFO common.c: Attempting to write 33804 (0x840c) bytes to stm32 address: 134217728 (0x8000000)
+2024-07-27T18:35:18 INFO common.c: Flash page at addr: 0x08000000 erased
+... <snip> ...
+2024-07-27T18:35:19 INFO common.c: Flash page at addr: 0x08008400 erased
+2024-07-27T18:35:19 INFO common.c: Finished erasing 34 pages of 1024 (0x400) bytes
+2024-07-27T18:35:19 INFO common.c: Starting Flash write for VL/F0/F3/F1_XL
+2024-07-27T18:35:19 INFO flash_loader.c: Successfully loaded flash loader in sram
+2024-07-27T18:35:19 INFO flash_loader.c: Clear DFSR
+ 34/ 34 pages written
+2024-07-27T18:35:21 INFO common.c: Starting verification of write complete
+2024-07-27T18:35:21 INFO common.c: Flash written and verified! jolly good
+```
+# NOTICE
+**Below here is still being updated!** Please ignore.
 
 ## DMV Host Configuration
 
-* Copy the configuration file `cp /usr/src/dvm-project-notes/config/dfsi.yml /opt/dvm/`.
-* Edit the configuration file `nano /opt/dvm/dfsi.yml`.
-  * Under `network:` change `identity: MYCALL-01` to your call sign-ssID or site name.
+* Copy the configuration file `cp /usr/src/dvm-project-notes/config/config.yml /opt/dvm/`.
+* Edit the configuration file `nano /opt/dvm/config.yml`.
+
+* Under `network:` change `identity: MYCALL-01` to your call sign-ssID or site name.
   * Under `network:` change `peerID: 1234` to a peer ID cordinated with your admin (may be you).
   * Under `network:` change `address: xxx.xxx.xxx.xxx` to the desired FNE IP address provided by your admin.
   * Under `network:` change `password: PASSWORD to the password provided by your admin.
@@ -85,55 +113,12 @@ This document will be updated once I get my STLink programmer and successfully f
  
 ## Testing
 
-Launch DFSI in the foreground `/opt/dvm/bin/dvmdfsi -f -c /opt/dvm/dfsi.yml`. You should see it login to the FNE after a few moments.
+Launch DVMHost in the foreground `/opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml`. You should see it login to the FNE after a few moments.
 
 ```
-I: 2024-07-24 11:01:24.686
-                                        .         .
-8 888888888o.   `8.`888b           ,8' ,8.       ,8.
-8 8888    `^888. `8.`888b         ,8' ,888.     ,888.
-8 8888        `88.`8.`888b       ,8' .`8888.   .`8888.
-8 8888         `88 `8.`888b     ,8' ,8.`8888. ,8.`8888.
-8 8888          88  `8.`888b   ,8' ,8'8.`8888,8^8.`8888.
-8 8888          88   `8.`888b ,8' ,8' `8.`8888' `8.`8888.
-8 8888         ,88    `8.`888b8' ,8'   `8.`88'   `8.`8888.
-8 8888        ,88'     `8.`888' ,8'     `8.`'     `8.`8888.
-8 8888    ,o88P'        `8.`8' ,8'       `8        `8.`8888.
-8 888888888P'            `8.` ,8'         `         `8.`8888.
+If that looks good then control-c out of dvmhost.
 
-Digital Voice Modem (DVM) DFSI V.24/UDP Peer 04.02C (R04C02 cd579eea) (built Jul 19 2024 21:17:24)
-Copyright (c) 2024 Patrick McDonnell, W3AXL and DVMProject (https://github.com/dvmproject) Authors.
->> DFSI Network Peer
-
-I: 2024-07-24 11:01:24.687 Network Parameters
-I: 2024-07-24 11:01:24.687     Identity:  WD6AWP-01
-I: 2024-07-24 11:01:24.687     Peer ID:   448040
-I: 2024-07-24 11:01:24.687     Address:   149.248.19.173
-I: 2024-07-24 11:01:24.687     Port:      62031
-I: 2024-07-24 11:01:24.687     Encrypted: no
-I: 2024-07-24 11:01:24.687 Serial Parameters
-I: 2024-07-24 11:01:24.687     Port Type:   uart
-I: 2024-07-24 11:01:24.687     Port:        /dev/ttyACM0
-I: 2024-07-24 11:01:24.687     Baudrate:    115200
-I: 2024-07-24 11:01:24.687     RT/RT:       Enabled
-I: 2024-07-24 11:01:24.687     DIU Flag:    Disabled
-I: 2024-07-24 11:01:24.687     Jitter Size: 200 ms
-I: 2024-07-24 11:01:24.687     Debug:       Disabled
-I: 2024-07-24 11:01:24.687     Trace:       Disabled
-I: 2024-07-24 11:01:24.687 (SERIAL) Opening port /dev/ttyACM0 at 115200 baud
-I: 2024-07-24 11:01:24.688 DFSI Parameters
-I: 2024-07-24 11:01:24.688     Mode: 2 (V24 DFSI to FNE)
-I: 2024-07-24 11:01:24.688     P25 Buffer Size: 3060 bytes
-I: 2024-07-24 11:01:24.688     Call Timeout:    200 ms
-I: 2024-07-24 11:01:24.688 (HOST) [ OK ] DFSI is up and running on Linux 6.1.0-23-amd64 x86_64
-D: 2024-07-24 11:01:34.695 (NET) PEER 448040 RPTL ACK, performing login exchange, remotePeerId = 9000100
-D: 2024-07-24 11:01:34.700 (NET) PEER 448040 RPTK ACK, performing configuration exchange, remotePeerId = 9000100
-M: 2024-07-24 11:01:34.711 (NET) PEER 448040 RPTC ACK, logged into the master successfully, remotePeerId = 9000100
-M: 2024-07-24 11:01:34.711 (NET) PEER 448040 RPTC ACK, master commanded alternate port for diagnostics and activity logging, remotePeerId = 9000100
-```
-If that looks good then control-c out of dfsi.
-
-## Install DFSI Service
+## Install DVMhost Service
 
 Install the service with these commands:
 
