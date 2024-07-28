@@ -129,6 +129,9 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
   * Under `protocol:` change `mode:` to "dfsi".
   * Under `uart:` change the `port:` "/dev/ttyACM0". To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`. 
   * Under `dfsi:` change `diu:` to false.
+* Under `iden_table` change `file:` to /opt/dvm/iden_table.dat
+* Under `radio_id:` change `file:` to /opt/dvm/radio_id.dat
+* Under `talkgroup_id:` change `file:` to /opt/dvm/talkgroup_rules.dat
 
 ## Testing
 
@@ -137,6 +140,13 @@ Launch DVMHost in the foreground `/opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml
 If that looks good then control-c out of dvmhost.
 
 ## Install DVMhost Service
+
+Insure proper ownership with:
+
+```
+cd /opt/dvm
+chown -R dvmhost:dvmhost *
+```
 
 Install the service with these commands:
 
@@ -149,4 +159,4 @@ systemctl start dvmhost.service
 ```
 Use `systemctl status dvmhost.service` to see if dvmhost is running.
 
-Use `journalctl -u dvmhost -f` to monitor the log. 
+Use `journalctl -u dvmhost -f` to monitor the console. 
