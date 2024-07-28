@@ -3,7 +3,7 @@
 This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment) on a Quantar repeater.
 
 Assumes:
-* You have a Debian 12 OS install with root access on a computer which the DVM V24 board will plug into. 
+* You have a Debian 12 x86_64 install with root access on a computer which the DVM V24 board will plug into. 
 * There is a known working ENF for DVMHost to login to either on this same or another computer. 
 
 ## Clone
@@ -62,9 +62,11 @@ cd dvm24/fw
 make
 ```
 
+
+
 ### Flash Firmware
 
-To flash the V24 board firmware a STlink programmer is needed. Programmers are inexpensive and available from Amazon, DigiKey, Mouser, eBay and etc. 
+To flash the V24 board firmware a ST-link V2 programmer is needed. Programmers are inexpensive and available from Amazon, DigiKey, Mouser, eBay and etc. 
 
 Connect four wires from the programmer to the V24 board. The V24 board pins are **labled on the underside** of the circuit board. 
  * 3.3 Volts
@@ -72,14 +74,17 @@ Connect four wires from the programmer to the V24 board. The V24 board pins are 
  * DIO
  * CLK
 
-Install the flash program: `apt install stlink-tools`
+Install st-link flash programer: `apt install stlink-tools`
 
-Assuming the firmware was built as above: 
+Assuming the firmware was built in `/usr/src/dvmv24/fw/`: 
+
 ```
-/usr/src/dvmv24/fw/
+cd /usr/src/dvmv24/fw/
 make flash
 ```
-You should see
+
+You should see:
+
 ```
 st-flash write build/DVM-V24-stm32f103.bin 0x08000000
 st-flash 1.7.0
@@ -131,19 +136,17 @@ Launch DVMHost in the foreground `/opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml
 
 If that looks good then control-c out of dvmhost.
 
-# NOTICE
-**Below here is still being updated!** Please ignore.
-
 ## Install DVMhost Service
 
 Install the service with these commands:
 
 ```
-cp /usr/src/dvm-project-notes/config/dvmdfsi.service /etc/systemd/system/dvmdfsi.service
+cd /usr/src/dvmhost/build
+make old_install-service
 systemctl daemon-reload
-systemctl enable dvmdfsi.service
-systemctl start dvmdfsi.service
+systemctl enable dvmhost.service
+systemctl start dvmhost.service
 ```
-Use `systemctl status dvmdfsi.service` to see if dfsi is running.
+Use `systemctl status dvmhost.service` to see if dvmhost is running.
 
-Use `journalctl -u dvmdfsi -f` to monitor the log. 
+Use `journalctl -u dvmhost -f` to monitor the log. 
