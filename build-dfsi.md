@@ -97,8 +97,6 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 2024-07-27T18:35:21 INFO common.c: Starting verification of write complete
 2024-07-27T18:35:21 INFO common.c: Flash written and verified! jolly good
 ```
-# NOTICE
-**Below here is still being updated!** Please ignore.
 
 ## DMV Host Configuration
 
@@ -132,6 +130,9 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 Launch DVMHost in the foreground `/opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml`. You should see it login to the FNE after a few moments.
 
 If that looks good then control-c out of dvmhost.
+
+# NOTICE
+**Below here is still being updated!** Please ignore.
 
 ## Install DVMhost Service
 
