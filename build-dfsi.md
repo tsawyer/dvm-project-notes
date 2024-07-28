@@ -102,14 +102,26 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 
 ## DMV Host Configuration
 
-* Copy the configuration file `cp /usr/src/dvm-project-notes/config/config.yml /opt/dvm/`.
+* Copy the configuration file `cp /opt/dvm/config/example.yml /opt/dvm/config.yml`.
 * Edit the configuration file `nano /opt/dvm/config.yml`.
-
-* Under `network:` change `identity: MYCALL-01` to your call sign-ssID or site name.
-  * Under `network:` change `peerID: 1234` to a peer ID cordinated with your admin (may be you).
-  * Under `network:` change `address: xxx.xxx.xxx.xxx` to the desired FNE IP address provided by your admin.
-  * Under `network:` change `password: PASSWORD to the password provided by your admin.
-  * Under `serial:` change the `port: "/dev/ttyACM0"`. To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyAMC`. 
+* Under `log:` change `fileLevel:` to 6.
+* Under `network:`
+  * Change `id:` to your call sign-ssID or site name.
+  * Change `address: xxx.xxx.xxx.xxx` to the desired FNE IP address provided by your admin.
+  * Change `password: PASSWORD to the password provided by your admin.
+* Under `protocols:`
+  * Under `dmr:` change `enable:` to false.
+  * Under `p25:` insure `enable:` is true.
+  * Under `nxdn:` insure `enable:` is false.
+* Under `system:`
+  * Change `idenity:` to YOUR CALL SIGN.
+  * Under `info:` optionally change the values.
+* Under `cwid:`
+  * Change `enable:` to false.
+* Under `modem:` under `protocol:`
+  * Change `type:` to uart
+  * Change `mode:` to dfsi
+  * Under `uart:` change the `port: "/dev/ttyACM0"`. To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`. 
  
 ## Testing
 
