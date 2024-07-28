@@ -106,7 +106,7 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 * Edit the configuration file `nano /opt/dvm/config.yml`.
 * Under `log:` change `fileLevel:` to 6.
 * Under `network:`
-  * Change `id:` to your call sign-ssID or site name.
+  * Change `id:` to admin provided peerID.
   * Change `address: xxx.xxx.xxx.xxx` to the desired FNE IP address provided by your admin.
   * Change `password:` to the password provided by your admin.
 * Under `protocols:`
