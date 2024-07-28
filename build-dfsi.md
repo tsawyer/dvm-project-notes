@@ -113,8 +113,8 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
   * Change `activityFilePath:` to /opt/dvm/log
 * Under `network:`
   * Change `id:` to admin provided peerID.
-  * Change `address:` to the desired FNE IP address provided by your admin.
-  * Change `password:` to the password provided by your admin.
+  * Change `address:` to the FNE IP address provided by your admin.
+  * Change `password:` to the FNE password provided by your admin.
 * Under `protocols:`
   * Under `dmr:` change `enable:` to false.
   * Under `p25:` insure `enable:` is true.
