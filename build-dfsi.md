@@ -116,11 +116,11 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 * Under `system:`
   * Change `idenity:` to YOUR CALL SIGN.
   * Under `info:` optionally change the values.
-* Under `cwid:`
+* Under `cwId:`
   * Change `enable:` to false.
 * Under `modem:`
-  * Under `protocol:` change `type:` to uart.
-  * Under `protocol:` change `mode:` to dfsi.
+  * Under `protocol:` change `type:` to "uart".
+  * Under `protocol:` change `mode:` to "dfsi".
   * Under `uart:` change the `port: "/dev/ttyACM0"`. To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`. 
   * Under `dfsi:` change `diu:` to false.
  
