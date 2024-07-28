@@ -59,6 +59,8 @@ To flash the V24 board firmware a STlink programmer is needed. Programmers are i
 
 Connect the programmer to the V24 board. The V24 board pins are labled on the underside of the circuit board. 
 
+`apt install stlink-tools`
+
 Assuming the firmware was built as above: 
 ```
 make flash
