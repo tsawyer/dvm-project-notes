@@ -102,12 +102,15 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 
 ## DMV Host Configuration
 
-* Copy the configuration file `cp /opt/dvm/config/example.yml /opt/dvm/config.yml`.
+* Copy the configuration file `cp /opt/dvm/config.example.yml /opt/dvm/config.yml`.
 * Edit the configuration file `nano /opt/dvm/config.yml`.
-* Under `log:` change `fileLevel:` to 6.
+* Under `log:`
+  * Change `fileLevel:` to 6.
+  * Change `filePath:` to /opt/dvm/log
+  * Change `activityFilePath:` to /opt/dvm/log
 * Under `network:`
   * Change `id:` to admin provided peerID.
-  * Change `address: xxx.xxx.xxx.xxx` to the desired FNE IP address provided by your admin.
+  * Change `address:` to the desired FNE IP address provided by your admin.
   * Change `password:` to the password provided by your admin.
 * Under `protocols:`
   * Under `dmr:` change `enable:` to false.
@@ -121,14 +124,13 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 * Under `modem:`
   * Under `protocol:` change `type:` to "uart".
   * Under `protocol:` change `mode:` to "dfsi".
-  * Under `uart:` change the `port: "/dev/ttyACM0"`. To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`. 
+  * Under `uart:` change the `port:` "/dev/ttyACM0". To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`. 
   * Under `dfsi:` change `diu:` to false.
- 
+
 ## Testing
 
 Launch DVMHost in the foreground `/opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml`. You should see it login to the FNE after a few moments.
 
-```
 If that looks good then control-c out of dvmhost.
 
 ## Install DVMhost Service
