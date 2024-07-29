@@ -76,6 +76,8 @@ Connect four wires from the programmer to the V24 board. The V24 board pins are 
  * DIO
  * CLK
 
+Do not connect V24 board USB-C or Quantar cables. 
+
 Install st-link flash programer: `apt install stlink-tools`
 
 Assuming the firmware was built in `/usr/src/dvmv24/fw/`:
