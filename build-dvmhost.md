@@ -1,10 +1,10 @@
-# DVMHost for DVM V24 Board 
+# DVMHost for DVM V24 Board
 
 This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment) on a Quantar repeater.
 
 Assumes:
-* You have a Debian 12 x86_64 install with root access on a computer which the DVM V24 board will plug into. 
-* There is a known working ENF for DVMHost to login to either on this same or another computer. 
+* You have a Debian 12 x86_64 install with root access on a computer which the DVM V24 board will plug into.
+* There is a known working ENF for DVMHost to login to either on this same or another computer.
 
 ## Clone
 
@@ -46,7 +46,7 @@ If the pre-built [binary firmware](https://github.com/DVMProject/dvmv24/releases
 Chances are neither is true and you'll need to build and flash new firmware.
 
 ### Compile Firmware
-The ARM toolchain is needed to build the latest firmware. On Debian and derivatives, 
+The ARM toolchain is needed to build the latest firmware. On Debian and derivatives,
 the package you’re looking for is gcc-arm-none-eabi, thank you [Stack Exchange](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc).
 
 ```
@@ -66,9 +66,9 @@ make
 
 ### Flash Firmware
 
-To flash the V24 board firmware a ST-link V2 programmer is needed. Programmers are inexpensive and available from Amazon, DigiKey, Mouser, eBay and etc. 
+To flash the V24 board firmware a ST-link V2 programmer is needed. Programmers are inexpensive and available from Amazon, DigiKey, Mouser, eBay and etc.
 
-Connect four wires from the programmer to the V24 board. The V24 board pins are **labled on the underside** of the circuit board. 
+Connect four wires from the programmer to the V24 board. The V24 board pins are **labled on the underside** of the circuit board.
  * 3.3 Volts
  * GND
  * DIO
@@ -76,7 +76,7 @@ Connect four wires from the programmer to the V24 board. The V24 board pins are 
 
 Install st-link flash programer: `apt install stlink-tools`
 
-Assuming the firmware was built in `/usr/src/dvmv24/fw/`: 
+Assuming the firmware was built in `/usr/src/dvmv24/fw/`:
 
 ```
 cd /usr/src/dvmv24/fw/
@@ -105,30 +105,35 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 
 ## DMV Host Configuration
 
-* Copy the configuration file `cp /opt/dvm/config.example.yml /opt/dvm/config.yml`.
+* Copy the configuration file `cp /usr/src/dvm-project-notes/config/config.yml /opt/dvm/config.yml`.
 * Edit the configuration file `nano /opt/dvm/config.yml`.
+
+Change the settings indicated by "CHANGE".
+
+List of all settings changed from DVM Project defaults as of 7/28/24.
+
 * Under `log:`
-  * Change `fileLevel:` to 6.
+  * Change `fileLevel:` to 6
   * Change `filePath:` to /opt/dvm/log
   * Change `activityFilePath:` to /opt/dvm/log
 * Under `network:`
-  * Change `id:` to admin provided peerID.
-  * Change `address:` to the FNE IP address provided by your admin.
-  * Change `password:` to the FNE password provided by your admin.
+  * CHANGE `id:` to admin provided peerID. Must be unique. Your freq may do.
+  * CHANGE `address:` to the FNE IP address provided by your admin.
+  * CHANGE `password:` to the FNE password provided by your admin.
 * Under `protocols:`
-  * Under `dmr:` change `enable:` to false.
-  * Under `p25:` insure `enable:` is true.
-  * Under `nxdn:` insure `enable:` is false.
+  * Under `dmr:` change `enable:` to false
+  * Under `p25:` insure `enable:` is true
+  * Under `nxdn:` insure `enable:` is false
 * Under `system:`
-  * Change `idenity:` to YOUR CALL SIGN.
-  * Under `info:` optionally change the values.
+  * CHANGE `idenity:` to YOUR CALL SIGN
+  * CHANGE `info:` optionally change the values.
 * Under `cwId:`
-  * Change `enable:` to false.
+  * Change `enable:` to false
 * Under `modem:`
-  * Under `protocol:` change `type:` to "uart".
-  * Under `protocol:` change `mode:` to "dfsi".
-  * Under `uart:` change the `port:` "/dev/ttyACM0". To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`. 
-  * Under `dfsi:` change `diu:` to false.
+  * Under `protocol:` change `type:` to "uart"
+  * Under `protocol:` change `mode:` to "dfsi"
+  * Under `uart:` change the `port:` "/dev/ttyACM0" To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`.
+  * Under `dfsi:` change `diu:` to false
 * Under `iden_table` change `file:` to /opt/dvm/iden_table.dat
 * Under `radio_id:` change `file:` to /opt/dvm/radio_id.dat
 * Under `talkgroup_id:` change `file:` to /opt/dvm/talkgroup_rules.dat
@@ -151,12 +156,11 @@ chown -R dvmhost:dvmhost *
 Install the service with these commands:
 
 ```
-cd /usr/src/dvmhost/build
-make old_install-service
+cp /usr/src/dvm-project-notes/config/dvmhost.service /etc/systemd/system
 systemctl daemon-reload
 systemctl enable dvmhost.service
 systemctl start dvmhost.service
 ```
 Use `systemctl status dvmhost.service` to see if dvmhost is running.
 
-Use `journalctl -u dvmhost -f` to monitor the console. 
+Use `journalctl -u dvmhost -f` to monitor the console.
