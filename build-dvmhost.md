@@ -110,7 +110,7 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 * Copy the configuration file `cp /usr/src/dvm-project-notes/config/config.yml /opt/dvm/config.yml`.
 * Edit the configuration file `nano /opt/dvm/config.yml`.
 
-Change the settings indicated by "CHANGE".
+Change the settings indicated by "**CHANGE**".
 
 List of all settings changed from DVM Project defaults as of 7/28/24.
 
@@ -119,16 +119,16 @@ List of all settings changed from DVM Project defaults as of 7/28/24.
   * Change `filePath:` to /opt/dvm/log
   * Change `activityFilePath:` to /opt/dvm/log
 * Under `network:`
-  * CHANGE `id:` to admin provided peerID. Must be unique. Your freq may do.
-  * CHANGE `address:` to the FNE IP address provided by your admin.
-  * CHANGE `password:` to the FNE password provided by your admin.
+  * **CHANGE** `id:` to admin provided peerID. Must be unique. Your freq may do.
+  * **CHANGE** `address:` to the FNE IP address provided by your admin.
+  * **CHANGE** `password:` to the FNE password provided by your admin.
 * Under `protocols:`
   * Under `dmr:` change `enable:` to false
   * Under `p25:` insure `enable:` is true
   * Under `nxdn:` insure `enable:` is false
 * Under `system:`
-  * CHANGE `idenity:` to YOUR CALL SIGN
-  * CHANGE `info:` optionally change the values.
+  * **CHANGE** `idenity:` to YOUR CALL SIGN
+  * **CHANGE** `info:` optionally change the values.
 * Under `cwId:`
   * Change `enable:` to false
 * Under `modem:`
