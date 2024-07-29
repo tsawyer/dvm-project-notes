@@ -23,6 +23,8 @@ or to update
 ```
 cd /usr/src/dvmhost
 git pull
+cd /usr/src/dvm-project-notes
+git pull
 ```
 
 ## Compile and Install DVMHost
