@@ -109,7 +109,7 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 2024-07-27T18:35:21 INFO common.c: Flash written and verified! jolly good
 ```
 
-## DMV Host Configuration
+## DVM Host Configuration
 
 * Copy the configuration file `cp /usr/src/dvm-project-notes/config/config.yml /opt/dvm/config.yml`.
 * Edit the configuration file `nano /opt/dvm/config.yml`.
@@ -141,7 +141,7 @@ List of all settings changed from DVM Project defaults as of 7/28/24.
   * Under `uart:` change the `port:` "/dev/ttyACM0" To find port insure the V24 board is connected to a USB port. Then do `ls -l /dev/ttyACM*`.
   * Under `dfsi:` change `diu:` to false
 * Under `iden_table` change `file:` to /opt/dvm/iden_table.dat
-* Under `radio_id:` change `file:` to /opt/dvm/radio_id.dat
+* Under `radio_id:` change `file:` to /opt/dvm/rid_acl.dat
 * Under `talkgroup_id:` change `file:` to /opt/dvm/talkgroup_rules.dat
 
 ## Testing
