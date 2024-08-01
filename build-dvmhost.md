@@ -142,7 +142,7 @@ List of all settings changed from DVM Project defaults as of 7/28/24.
   * Under `dfsi:` change `diu:` to false
 * Under `iden_table` change `file:` to /opt/dvm/iden_table.dat
 * Under `radio_id:` change `file:` to /opt/dvm/rid_acl.dat
-* Under `talkgroup_id:` change `file:` to /opt/dvm/talkgroup_rules.dat
+* Under `talkgroup_id:` change `file:` to /opt/dvm/talkgroup_rules.yml
 
 ## Testing
 
