@@ -114,7 +114,7 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 * Copy the configuration file `cp /usr/src/dvm-project-notes/config/config.yml /opt/dvm/config.yml`.
 * Edit the configuration file `nano /opt/dvm/config.yml`.
 
-Change the settings indicated by "**CHANGE**".
+You need to change 5 settings indicated by "**CHANGE**" (uppercase bold).
 
 List of all settings changed from DVM Project defaults as of 7/28/24.
 
