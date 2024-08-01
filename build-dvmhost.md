@@ -1,6 +1,6 @@
 # DVMHost for DVM V24 Board
 
-2024-08-01 0206Z
+2024-08-01 2019Z
 
 This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment) on a Quantar repeater.
 
@@ -115,16 +115,19 @@ First, change directory and copy two files:
 ```
 cd /opt/dbm/
 cp talkgroup_rules.example.yml talkgroup_rules.yml
-cp /usr/src/dvm-project-notes/config/config.yml
+cp /usr/src/dvm-project-notes/config/config.yml config.yml
 ```
 
 Next, edit the configuration file `nano config.yml`.
 
-You need to change only 5 settings as indicated by **CHANGE** in uppercase and bold.
+You need to change only ***5 settings*** as indicated by **CHANGE** in bold uppercase.
 Do not change any other settings.
-The non bold "Change" settings simply document the changes I made from the DVM Project defaults as of 7/28/24 and are for referance only.
 
 ### DMVHost Config File Notes
+
+This documents the changes I've made from the DVM Project defaults as of 7/28/24.
+Remember, you change the only bold uppercase **CHANGE** settings. I've already changed the other settings.
+
 * Under `log:`
   * Change `fileLevel:` to 6
   * Change `filePath:` to /opt/dvm/log
