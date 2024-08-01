@@ -35,7 +35,7 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 
 * Do install the dependicies.
 * Don't install the cross compilers
-* No options are needed for cmake. Just do `cmake ..` That compiles the project C code. It doesn't take long.
+* Now do cmake followed by a space and two dots, like this `cmake ..` That compiles the project C code. It doesn't take long.
 * The `make` command builds the project and may take a long time.
 * Finally do `make strip` and `make old_install`. This removes debug code and copies the project to `/opt/dvm`.
 
