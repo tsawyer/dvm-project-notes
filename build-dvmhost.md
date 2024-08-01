@@ -111,13 +111,20 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 
 ## DVM Host Configuration
 
-* Copy the configuration file `cp /usr/src/dvm-project-notes/config/config.yml /opt/dvm/config.yml`.
-* Edit the configuration file `nano /opt/dvm/config.yml`.
+First, change directory and copy two files:
+```
+cd /opt/dbm/
+cp talkgroup_rules.example.yml talkgroup_rules.yml
+cp /usr/src/dvm-project-notes/config/config.yml
+```
 
-You need to change 5 settings indicated by "**CHANGE**" (uppercase bold).
+Next, edit the configuration file `nano config.yml`.
 
-List of all settings changed from DVM Project defaults as of 7/28/24.
+You need to change only 5 settings as indicated by **CHANGE** in uppercase and bold.
+Do not change any other settings.
+The non bold "Change" settings simply document the changes I made from the DVM Project defaults as of 7/28/24 and are for referance only.
 
+### DMVHost Config File Notes
 * Under `log:`
   * Change `fileLevel:` to 6
   * Change `filePath:` to /opt/dvm/log
