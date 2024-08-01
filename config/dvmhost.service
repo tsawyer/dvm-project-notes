@@ -8,7 +8,7 @@ ExecStart=/opt/dvm/bin/dvmhost -c /opt/dvm/config.yml
 ExecStop=/bin/kill -s SIGTERM $MAINPID
 RestartSec=20s
 Restart=on-failure
-User=dvmhost
+User=root
 
 [Install]
 WantedBy=multi-user.target

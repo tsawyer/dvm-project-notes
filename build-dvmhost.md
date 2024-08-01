@@ -1,6 +1,6 @@
 # DVMHost for DVM V24 Board
 
-2024-07-29 1715Z
+2024-08-01 0206Z
 
 This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment) on a Quantar repeater.
 
@@ -78,7 +78,7 @@ Connect four wires from the programmer to the V24 board. The V24 board pins are 
  * DIO
  * CLK
 
-Do not connect V24 board USB-C or Quantar cables. 
+Do not connect V24 board USB-C or Quantar cables.
 
 Install st-link flash programer: `apt install stlink-tools`
 
