@@ -113,7 +113,7 @@ file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, s
 
 First, change directory and copy two files:
 ```
-cd /opt/dbm/
+cd /opt/dvm/
 cp talkgroup_rules.example.yml talkgroup_rules.yml
 cp /usr/src/dvm-project-notes/config/config.yml config.yml
 ```
