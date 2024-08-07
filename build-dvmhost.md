@@ -20,7 +20,7 @@ git clone https://github.com/tsawyer/dvm-project-notes.git
 cd dvmhost
 ```
 
-or to update
+or be sure to update if not the first time 
 
 ```
 cd /usr/src/dvmhost
@@ -35,9 +35,22 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 
 * Do install the dependicies.
 * Don't install the cross compilers
-* Now do cmake followed by a space and two dots, like this `cmake ..` That compiles the project C code. It doesn't take long.
+* Run the following commands one at a time. Fix any errors before continuing.
+
+```
+cd /usr/src/dvmhost
+mkdir build
+cd build
+cmake ..
+make
+make strip
+make old_install
+```
+
+Explanation:
+* The cmake followed by a space and two dots, like this `cmake ..` compiles the project C code. It doesn't take long.
 * The `make` command builds the project and may take a long time.
-* Finally do `make strip` and `make old_install`. This removes debug code and copies the project to `/opt/dvm`.
+* Finally `make strip` and `make old_install` removes debug code and copies the project to `/opt/dvm`.
 
 This complete the build of DVMHost.
 
@@ -161,13 +174,6 @@ Launch DVMHost in the foreground `/opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml
 If that looks good then control-c out of dvmhost.
 
 ## Install DVMhost Service
-
-Insure proper ownership with:
-
-```
-cd /opt/dvm
-chown -R dvmhost:dvmhost *
-```
 
 Install the service with these commands:
 
