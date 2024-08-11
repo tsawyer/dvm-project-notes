@@ -1,6 +1,6 @@
 ## DVMhost logs
 
-I find journalctl a very useful tool for viewing logs, more functional than viewing text log files. Here are some of the ways I use journalctl to dvmhost logs. 
+Journalctl is a very useful tool for viewing logs, more functional than viewing text log files. Here are some of the ways I use journalctl to dvmhost logs. 
 1. View all log entries: `journalctl -u dvmhost`
 2. Tail (live view) all entries: `journalctl -u dvmhost -f`
 3. View yesterday's log: `journalctl -S yesterday -u dvmhost`
