@@ -20,7 +20,7 @@ git clone https://github.com/tsawyer/dvm-project-notes.git
 cd dvmhost
 ```
 
-or be sure to update if not the first time 
+or be sure to update if not the first time
 
 ```
 cd /usr/src/dvmhost
@@ -53,88 +53,6 @@ Explanation:
 * Finally `make strip` and `make old_install` removes debug code and copies the project to `/opt/dvm`.
 
 This complete the build of DVMHost.
-
-## Compile and Flash V24 Board Firmware
-
-These steps are from [github.com/DVMProject/dvmv24](https://github.com/DVMProject/dvmv24). You should read it.
-
-If your DVM V24 board has current firmware skip down to **DVM Host Configuration**.
-If the pre-built [binary firmware](https://github.com/DVMProject/dvmv24/releases) is current skip down to **Flash Firmware**.
-Chances are neither is true and you'll need to build and flash new firmware.
-
-### Compile Firmware
-The ARM toolchain is needed to build the latest firmware. On Debian and derivatives,
-the package you’re looking for is gcc-arm-none-eabi, thank you [Stack Exchange](https://unix.stackexchange.com/questions/377345/installing-arm-none-eabi-gcc).
-
-```
-apt install gcc-arm-none-eabi
-```
-
-With the ARM tool chain installed, build the firmware:
-
-```
-cd /usr/src
-git clone https://github.com/DVMProject/dvmv24.git
-cd dvm24/fw
-make
-```
-
-
-
-### Flash Firmware
-
-To flash the V24 board firmware a ST-link V2 programmer is needed. Programmers are inexpensive and available from Amazon, DigiKey, Mouser, eBay and etc.
-
-Connect four wires from the programmer to the V24 board. The V24 board pins are **labled on the underside** of the circuit board.
- * 3.3 Volts
- * GND
- * DIO
- * CLK
-
-Do not connect V24 board USB-C or Quantar cables.
-
-### If first time
-If this it the first time you've flashed, install st-link flash programer: `apt install stlink-tools`
-
-### If you compiled new firmware
-Assuming the firmware was built in `/usr/src/dvmv24/fw/`:
-
-```
-cd /usr/src/dvmv24/fw/
-```
-
-### If you downloaded new firmware
-
-Put the new firmware in `/usr/src/dvmv24/fw/build`
-
-```
-cd /usr/src/dvmv24/fw/
-```
-
-### Flash
-
-do `make flash`
-
-
-You should see:
-
-```
-st-flash write build/DVM-V24-stm32f103.bin 0x08000000
-st-flash 1.7.0
-2024-07-27T18:35:18 INFO common.c: F1xx Medium-density: 20 KiB SRAM, 64 KiB flash in at least 1 KiB pages.
-file build/DVM-V24-stm32f103.bin md5 checksum: 11432cfce54d9407e80ef4ed7ce283, stlink checksum: 0x0034350d
-2024-07-27T18:35:18 INFO common.c: Attempting to write 33804 (0x840c) bytes to stm32 address: 134217728 (0x8000000)
-2024-07-27T18:35:18 INFO common.c: Flash page at addr: 0x08000000 erased
-... <snip> ...
-2024-07-27T18:35:19 INFO common.c: Flash page at addr: 0x08008400 erased
-2024-07-27T18:35:19 INFO common.c: Finished erasing 34 pages of 1024 (0x400) bytes
-2024-07-27T18:35:19 INFO common.c: Starting Flash write for VL/F0/F3/F1_XL
-2024-07-27T18:35:19 INFO flash_loader.c: Successfully loaded flash loader in sram
-2024-07-27T18:35:19 INFO flash_loader.c: Clear DFSR
- 34/ 34 pages written
-2024-07-27T18:35:21 INFO common.c: Starting verification of write complete
-2024-07-27T18:35:21 INFO common.c: Flash written and verified! jolly good
-```
 
 ## DVM Host Configuration
 
