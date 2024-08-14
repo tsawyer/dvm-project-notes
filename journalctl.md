@@ -6,5 +6,6 @@ Journalctl is a very useful tool for viewing logs, more functional than viewing 
 3. View yesterday's log: `journalctl -S yesterday -u dvmhost`
 4. View today's log `journalctl -S today -u dvmhost`
 5. Tail (live view) log for errors and warnings: `journalctl -u dvmhost -f | grep -E ' E: | W: '`
+6. Check V.24 board firmware date `journalctl -S today -u dvmhost | grep "DVM-V24 FW"`
 
 General info on [journalctl](https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs).
