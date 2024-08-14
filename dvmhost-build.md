@@ -1,8 +1,10 @@
 # DVMHost for DVM V24 Board
 
-2024-08-01 2019Z
+2024-08-14 2226Z
 
 This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment) on a Quantar repeater.
+
+If you want to update see [dvmhost-update](dvmhost-update.md).
 
 Assumes:
 * You have a Debian 12 x86_64 install with root access on a computer which the DVM V24 board will plug into.
@@ -18,15 +20,6 @@ cd /usr/src
 git clone https://github.com/DVMProject/dvmhost.git
 git clone https://github.com/tsawyer/dvm-project-notes.git
 cd dvmhost
-```
-
-or be sure to update if not the first time
-
-```
-cd /usr/src/dvmhost
-git pull
-cd /usr/src/dvm-project-notes
-git pull
 ```
 
 ## Compile and Install DVMHost
