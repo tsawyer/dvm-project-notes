@@ -5,11 +5,14 @@ Do as root or sudo.
 
 ## Pull
 
-Pull new dvmhost source and this repo
+Pull new dvmhost source and this repo.
 
 ```
 cd /usr/src/dvmhost
 git pull
+```
+Optionally pull my repo.
+```
 cd /usr/src/dvm-project-notes
 git pull
 ```
