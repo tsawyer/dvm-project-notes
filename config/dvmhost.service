@@ -3,7 +3,7 @@ Description=DVM Host Service
 After=network.target
 
 [Service]
-Type=simple
+Type=forking
 ExecStart=/opt/dvm/bin/dvmhost -c /opt/dvm/config.yml
 ExecStop=/bin/kill -s SIGTERM $MAINPID
 RestartSec=20s
