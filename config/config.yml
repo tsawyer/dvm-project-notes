@@ -5,7 +5,7 @@
 #
 
 # Flag indicating whether the host will run as a background or foreground task.
-daemon: false
+daemon: true
 
 #
 # Logging Configuration
