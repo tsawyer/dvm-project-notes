@@ -110,4 +110,4 @@ systemctl start dvmhost.service
 ```
 Use `systemctl status dvmhost.service` to see if dvmhost is running.
 
-Use `journalctl -u dvmhost -f` to monitor the console.
+Use `tail -f /opt/dvm/log/DVM... ` to monitor operations.
