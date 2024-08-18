@@ -1,5 +1,7 @@
 # Make DVM tarball for amd64 systems
 
+On my "build" server: 
+
 ## Make tarball
 
 Prereq:
@@ -33,7 +35,9 @@ git push
 
 ## Install tarball
 
+On your own dmvhost server:
 ```
-wget
-
+wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
+tar xzvf dvmhost_R04Axx_amd64.tar.gz.2 -C /opt
+systemctl restart dvmhost
 ```
