@@ -1,10 +1,16 @@
 # Make DVM tarball for amd64 systems
 
-```text
-cd /usr/src/
+## Make tarball
+
+Prereq:
+```
+cd /usr/src
 git clone https://github.com/chriskohlhoff/asio.git
 git clone https://github.com/gansm/finalcut.git
-cd dvmhost
+```
+
+```
+cd /usr/src/dvmhost
 make clean
 mkdir build
 cd build
@@ -12,4 +18,22 @@ cmake .. -DASIO_INCLUDE_DIR=/usr/src/libasio -DFINALCUT_INCLUDE_DIR=/usr/src/fin
 make
 make strip
 make tarball
+```
+## Push to my repo
+
+```
+cd /usr/src/dvm-project-notes
+git pull
+cd tarball
+cp /usr/src/dvmhost/build/dvmhost_R04Axx_amd64.tar.gz .
+git add dvmhost_R04Axx_amd64.tar.gz
+git commit
+git push
+```
+
+## Install tarball
+
+```
+wget
+
 ```
