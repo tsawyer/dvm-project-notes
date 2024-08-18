@@ -22,9 +22,9 @@ log:
     # Console display logging level (used when in foreground).
     displayLevel: 1
     # File logging level.
-    fileLevel: 6
+    fileLevel: 2
     # Flag indicating file logs should be sent to syslog instead of a file.
-    useSyslog: false
+    useSyslog: true
     # Full path for the directory to store the log files.
     filePath: /opt/dvm/log
     # Full path for the directory to store the activity log files.
