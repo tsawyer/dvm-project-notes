@@ -9,5 +9,5 @@ I found DVMHost runs much better and causes fewer (or possibly no) V.24 board cr
 
 /opt/dvm/config.yml
  * `daemon: true`
- * log `fileLevel: 2`
- * log `useSyslog: true` allows journal logging.
+ * log `fileLevel: 2` optional
+ * log `useSyslog: true` optional, allows journalctl log viewing.
