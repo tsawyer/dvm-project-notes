@@ -1,6 +1,6 @@
 # DVMHost for DVM V24 Board
 
-2024-08-14 2226Z
+2024-08-18 0217Z
 
 This is how to build and configure DVMHost for use with the [DVM V24 board](https://store.w3axl.com/products/dvm-v24-usb-converter-for-v24-equipment) on a Quantar repeater.
 
@@ -66,6 +66,7 @@ Do not change any other settings.
 This documents the changes I've made from the DVM Project defaults as of 7/28/24.
 Remember, you change the only bold uppercase **CHANGE** settings. I've already changed the other settings.
 
+* Insure `daemon: true`
 * Under `log:`
   * Change `fileLevel:` to 6
   * Change `filePath:` to /opt/dvm/log
