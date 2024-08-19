@@ -10,4 +10,4 @@ Change service to **Type = forking**.
 /opt/dvm/config.yml
  * `daemon: true`
  * log `fileLevel: 2` optional
- * log `useSyslog: true` optional, allows [journalctl](journal.md) log viewing on modern systemd systems.
+ * log `useSyslog: true` optional, allows [journalctl](journalctl.md) log viewing on modern systemd systems.
