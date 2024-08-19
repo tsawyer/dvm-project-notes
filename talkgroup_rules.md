@@ -18,6 +18,7 @@ Talkgroup section of config.yml should look like this.
         acl: false
 ```
 
+In config.yml
 * Change `updateLookups: false` to `updateLookups: true`. Load talkgroups from FNE.
 * Change `saveLookups: false` to `saveLookups: true`. Optional. Create or overwrite talkgroup_rules.yml.
  
