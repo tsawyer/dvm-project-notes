@@ -2,7 +2,7 @@
 Stuff I need to keep track of for the DVM Project
 
 ## Update 2024-08-17
-I found DVMHost runs much better and causes fewer (or possibly no) V.24 board crashes with the following changes.
+Change service to **Type = forking**.
 
 /etc/systemd/system/dvmhost.service
  * `Type: forking`
