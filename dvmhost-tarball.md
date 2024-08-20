@@ -56,6 +56,6 @@ Download and install on DVMHost sites.
 
 ```
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
-tar xzvf dvmhost_R04Axx_amd64.tar.gz.2 -C /opt
+tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
 systemctl restart dvmhost
 ```
