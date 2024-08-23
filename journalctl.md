@@ -2,7 +2,7 @@
 
 The logs are located in `/opt/dvm/log`  with a file name format of `DVM-yyyy-mm-dd.log` and `DVM-yyyy-mm-dd.activity.log`. 
 
-***Note:*** Since changing the service to run with `type=forking` and the config to `daemon: true`, logging must be changed to `useSyslog: true`.
+***Note:*** Since changing the service to run with `type=forking` and the config to `daemon: true`, logging must be changed to `useSyslog: true` for journalctl.
 
 Journalctl is a very useful tool for viewing logs, more functional than viewing text log files. Here are some of the ways I use journalctl to view dvmhost logs. 
 1. View all log entries: `journalctl -u dvmhost`
