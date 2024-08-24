@@ -10,11 +10,10 @@ Assumes:
 * You have a Debian 12 x86_64 install with root access on a computer which the DVM V24 board will plug into.
 * There is a known working ENF for DVMHost to login to either on this same or another computer.
 
-## Install Required Tools
+## Install Required Tools and Libs
 
 ```
-apt install git g++ cmake
-apt-get install libasio-dev libncurses-dev libssl-dev
+apt install git g++ cmake libasio-dev libncurses-dev libssl-dev
 ```
 
 ## Clone
@@ -32,7 +31,7 @@ cd dvmhost
 
 Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/dvmhost/blob/master/README.md).
 
-* Do install the dependicies (Required Tools)
+* Insure **Required Tools and Libs** (above) are installed
 * Don't install the cross compilers
 * Run the following commands one at a time. Fix any errors before continuing.
 
