@@ -469,7 +469,7 @@ system:
 
             uart:
                 # UART/RS232 serial port device.
-                port: /dev/ttyACM0
+                port: /dev/DVMV24
                 # UART/RS232 serial port speed. (The default speed of 115200, should not be
                 # changed unless the speed is also changed in the firmware of the modem.)
                 speed: 115200
