@@ -10,10 +10,16 @@ Assumes:
 * You have a Debian 12 x86_64 install with root access on a computer which the DVM V24 board will plug into.
 * There is a known working ENF for DVMHost to login to either on this same or another computer.
 
-## Install Required Tools and Libs
+## Required Tools and Libs
 
 ```
 apt install git g++ cmake libasio-dev libncurses-dev libssl-dev
+```
+
+## Optional tools
+
+```
+apt install vim sudo htop zsh
 ```
 
 ## Clone
