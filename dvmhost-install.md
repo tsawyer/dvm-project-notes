@@ -16,7 +16,7 @@ My favorites, ymmv.
 
 ## Clone
 
-This clones this repo. You need it locally. Notice we don't clone [DVMHost](https://github.com/DVMProject/dvmhost) because we install a prebuild version. This version only works on amd486.
+Clone this repo. You need it locally. Notice we don't clone [DVMHost](https://github.com/DVMProject/dvmhost) because we install a prebuild binary and config. This version is for amd486.
 
 ```
 cd /usr/src
