@@ -31,6 +31,7 @@ Follow the instructions at [DVMProject README.md](https://github.com/DVMProject/
 * Run the following commands one at a time. Fix any errors before continuing.
 
 ```
+apt-get install libasio-dev libncurses-dev libssl-dev
 cd /usr/src/dvmhost
 mkdir build
 cd build
