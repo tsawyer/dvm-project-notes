@@ -29,7 +29,7 @@ mkdir build
 cd build
 
 # cmake with preloaded libs
-cmake .. -DASIO_INCLUDE_DIR=/usr/src/libasio -DFINALCUT_INCLUDE_DIR=/usr/src/finalcut
+cmake -DASIO_INCLUDE_DIR=/usr/src/libasio -DFINALCUT_INCLUDE_DIR=/usr/src/finalcut ..
 
 make
 make strip
