@@ -52,7 +52,12 @@ Next, edit the custom configuration file with `nano /opt/dvm/config.yml` or your
 
 ## Test
 
-Launch DVMHost in the foreground `/opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml`. You should see it login to the FNE after a few moments.
+With the v.24 card connected to USB, launch DVMHost in the foreground `/opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml`. You should see it login to the FNE after a few moments. You should see:
+
+```
+I: 2024-08-25 09:53:10.308 (HOST) [WAIT] Host is performing late initialization and warmup
+... and some peer details.
+```
 
 If that looks good then control-c out of dvmhost.
 
