@@ -1,5 +1,6 @@
 # dvm-project-notes
-Stuff I need to keep track of for the [DVM Project](https://github.com/DVMProject/dvmhost). 99.9% of this info was gleaned from [DVM Project Discord Server](https://discord.gg/3pBe8xgrEz).
+These are **my** notes, code and stuff I need to keep track of for the [DVM Project](https://github.com/DVMProject/dvmhost).
+99.9% of this info was gleaned from [DVM Project Discord Server](https://discord.gg/3pBe8xgrEz) but those folks have nothing to do with what I have posted here. 
 
 ## Update 2024-08-17
 Change service to **Type = forking**.
