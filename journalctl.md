@@ -15,7 +15,7 @@ Combine journalctl with grep and magic happens:
 
 6. Tail (live view) errors and warnings: `journalctl -u dvmhost -f | grep -E ' E: | W: '`
 7. Tail errors and warnings excluding peerId 310778140: `journalctl -S 09:00 -u dvmfne -f | grep -v 310778104 | grep -E ' E: | W: '`
-8. Check V.24 board firmware date: `journalctl -u dvmhost | grep "DVM-V24 FW"`. Wait for the prompt. This takes a while to run all way to the last update.
+8. Check V.24 board firmware date: `journalctl -u dvmhost | grep "DVM-V24 FW"`. Wait for the prompt. This may take a while to run all way to the most recient update.
 9. Find my overflows in the FNE: `journalctl -S yesterday -u dvmfne -f | grep "AWP.*overflow"`
 
 General info on [journalctl](https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs).
