@@ -20,17 +20,12 @@ Assuming the firmware was built in `/usr/src/dvmv24/fw/`:
 cd /usr/src/dvmv24/fw/
 ```
 
-### If you downloaded new firmware
-
-Put the new firmware in `/usr/src/dvmv24/fw/build`
-
-```
-cd /usr/src/dvmv24/fw/
-```
+### If you download the new firmware
+If you downloaded new firmware from `https://github.com/DVMProject/dvmv24/releases/tag/v2.1`.
+Put the new firmware in `/usr/src/dvmv24/fw/build` then `cd /usr/src/dvmv24/fw/` and proceed to Flash
 
 ### Flash
-
-do `make flash`
+With your programmer connected do `make flash`
 
 
 You should see:
