@@ -22,11 +22,14 @@ cd /usr/src/dvmv24/fw/
 
 ### If you download the new firmware
 If you downloaded new firmware from `https://github.com/DVMProject/dvmv24/releases/tag/v2.1`.
-Put the new firmware in `/usr/src/dvmv24/fw/build` then `cd /usr/src/dvmv24/fw/` and proceed to Flash
+
+Put the new firmware in the build directory `/usr/src/dvmv24/fw/build`. 
 
 ### Flash
-With your programmer connected do `make flash`
+With your programmer connected
+and the .bin file in the build directory above 
 
+`cd /usr/src/dvmv24/fw/` and then do `make flash`
 
 You should see:
 
