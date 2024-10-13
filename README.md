@@ -9,12 +9,16 @@ This updates the DVMProject binaries without having to compile it on each server
 Grab and install the tarball. For updating this is all that is needed.
 ```
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
+```
+then
+```
 tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
 systemctl restart dvmhost
 ```
+That's it. Update is complete.
 
 ## New DVMHost Install
-This are incomplete instructions at this time. 
+
 For new installs a few other steps are required. Grab config.yml and use it as a template for you own DVM host and FNE connection. 
 ```
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/config/config.yml
