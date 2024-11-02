@@ -9,10 +9,17 @@ dpkg -i packages-microsoft-prod.deb
 ```
 wget https://packages.microsoft.com/keys/microsoft.asc
 cat microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
-source /etc/os-release
+source /etc/os-release #Adds $ID and $VERSION to environment.
 wget https://packages.microsoft.com/config/$ID/$VERSION_ID/prod.list
-mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
-mv microsoft.asc.gpg $(cat /etc/apt/sources.list.d/microsoft-prod.list | grep -oP "(?<=signed-by=).*(?=\])")
+
+# These two steps might not work...
+cp prod.list /etc/apt/sources.list.d/microsoft-prod.list
+cp microsoft.asc.gpg $(cat /etc/apt/sources.list.d/microsoft-prod.list | grep -oP "(?<=signed-by=).*(?=\])")
+
+# ... If not, try this instead.
+cp prod.list /etc/apt/sources.list.d/microsoft-prod.list
+cp microsoft.asc.gpg /etc/apt/sources.list.d/microsoft-prod.list
+
 ```
 
 # Update and install dotnet
