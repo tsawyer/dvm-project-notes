@@ -5,26 +5,34 @@ wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb
 dpkg -i packages-microsoft-prod.deb
 ```
 
-## Install gpg key
+## Install MS repo and gpg key
 ```
+# wget and process MS gpg key
 wget https://packages.microsoft.com/keys/microsoft.asc
 cat microsoft.asc | gpg --dearmor -o microsoft.asc.gpg
-source /etc/os-release #Adds $ID and $VERSION to environment.
+
+#Add OS $ID and $VERSION to environment, then wget prod.list for this OS.
+source /etc/os-release
 wget https://packages.microsoft.com/config/$ID/$VERSION_ID/prod.list
 
-# These two steps might not work...
-cp prod.list /etc/apt/sources.list.d/microsoft-prod.list
+# Install list
+mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
+
+# These step might not work...
 cp microsoft.asc.gpg $(cat /etc/apt/sources.list.d/microsoft-prod.list | grep -oP "(?<=signed-by=).*(?=\])")
 
-# ... If not, try this instead.
-cp prod.list /etc/apt/sources.list.d/microsoft-prod.list
-cp microsoft.asc.gpg /etc/apt/sources.list.d/microsoft-prod.list
+# The goal is to end up with:
+cat /etc/apt/sources.list.d/microsoft-prod.list
+deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-prod.gpg] https://packages.microsoft.com/debian/12/prod bookworm main
 
+# However, this (no key) works on my Debian 11 system
+cat /etc/apt/sources.list.d/microsoft-prod.list
+deb [arch=amd64,armhf,arm64] https://packages.microsoft.com/debian/11/prod bullseye main#
 ```
 
-# Update and install dotnet
+# apt update and install dotnet
 ``` 
-apt-get update
+apt update
 apt install dotnet-sdk-8.0     #Or desired version.
 ```
 
