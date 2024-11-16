@@ -4,13 +4,14 @@ These notes are things I need to keep track of for the [DVM Project](https://git
 The folks on Discord and GitHub have nothing to do with what I have posted here and they don't support it.
 
 # DVMHost Install
- - First grab the tarball, install the binaries and example configs in `/opt/dvm`.
+ - First grab the tarball. Install the binaries and example configs in `/opt/dvm`:
 ```
+cd ~
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
 tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
 ```
  - Rename config.example.yml to config.yml.
- - Edit config.yml for your DVM host and FNE connection. See [config.yml edits](config-edits.md).
+ - Edit config.yml for the DVMhost settings and FNE connection. See [config.yml edits](config-edits.md).
  - Install the service:
 ```
 cd /etc/systemd/system
@@ -24,10 +25,8 @@ systemctl daemon-reload
 This updates the DVMProject amd64 binaries without having to compile it on each server.
 These are also the first steps for a new install.
 ```
+cd ~
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
-```
-Then use the "old install" procedure.
-```
 tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
 systemctl restart dvmhost.service
 ```
