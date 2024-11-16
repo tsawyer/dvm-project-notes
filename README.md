@@ -15,10 +15,10 @@ tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
  - The above steps installs the binaries and example configs in `/opt/dvm`.
  - Rename config.example.yml to config.yml.
  - Edit config.yml for your DVM host and FNE connection. See [config.yml edits](config-edits.md).
- - Install the service
+ - Install the service:
 ```
-cd /etc/serviced/service
-https://raw.githubusercontent.com/tsawyer/dvm-project-notes/blob/main/config/dvmhost.service
+cd /etc/systemd/system
+wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/config/dvmhost.service
 systemctl daemon-reload
 ```
  - Start DVM host `systemctl start dvmhost.service`.
