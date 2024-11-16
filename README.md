@@ -19,13 +19,11 @@ systemctl restart dvmhost
 For updating that is all that is needed.
 
 # DVMHost Install
-
 For new installs a few additional steps are required.
-
  - Do the above steps which installs the binaries and example configs in `/opt/dvm`.
  - Rename config.example.yml to config.yml.
  - Edit config.yml for you DVM host and FNE connection. See [config.yml edits](config-edits.md).
  - Install the [service file](install-dvmhost-service.md).
- -
+
 # DVM-V24 Firmware
 Latest [DVM V24 Board firmware](https://github.com/DVMProject/dvmv24) is required for DVMHost.
