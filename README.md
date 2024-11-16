@@ -1,40 +1,31 @@
 # WD6AWP dvm-project-notes
-This repo is for our group of [DVM Project](https://github.com/DVMProject/dvmhost) users.
+These notes are things I need to keep track of for the [DVM Project](https://github.com/DVMProject/dvmhost).
 99.9% of this info was gleaned from the [DVM Project Discord Server](https://discord.gg/3pBe8xgrEz).
-The folks on Discord and GitHub have nothing to do with what I have posted here and don't support it.
+The folks on Discord and GitHub have nothing to do with what I have posted here and they don't support it.
 
-## Quick Update
-This updates the DVMProject binaries without having to compile it on each server. It's for adm64 systems only. 
+# DVMHost Install and Update
+This updates the DVMProject amd64 binaries without having to compile it on each server.
+These are also the first steps for a new install.
 
-Grab and install the tarball. For updating this is all that is needed.
+Grab and the tarball.
 ```
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
 ```
-then
+Then use the "old install" procedure.
 ```
 tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
 systemctl restart dvmhost
 ```
-That's it. Update is complete.
+For updating that is all that is needed.
 
-## New DVMHost Install
+# DVMHost Install
 
-For new installs a few other steps are required. Grab config.yml and use it as a template for you own DVM host and FNE connection. 
-```
-wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/config/config.yml
-```
-You also need the service file... more on this later.
+For new installs a few additional steps are required.
 
-## Firmware
+ - Do the above steps which installs the binaries and example configs in `/opt/dvm`.
+ - Rename config.example.yml to config.yml.
+ - Edit config.yml for you DVM host and FNE connection. See [config.yml edits](config-edits.md).
+ - Install the [service file](install-dvmhost-service.md).
+ -
+# DVM-V24 Firmware
 Latest [DVM V24 Board firmware](https://github.com/DVMProject/dvmv24) is required for DVMHost.
-
-## Update 2024-08-17
-Change service to **Type = forking**.
-
-/etc/systemd/system/dvmhost.service
- * `Type: forking`
-
-/opt/dvm/config.yml
- * `daemon: true`
- * log `fileLevel: 2` optional
- * log `useSyslog: true` optional, allows [journalctl](journalctl.md) log viewing on modern systemd systems.
