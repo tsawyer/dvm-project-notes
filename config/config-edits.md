@@ -26,7 +26,7 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
 * Under `modem:`
   * Under `protocol:` change `type:` to "uart"
   * Under `protocol:` change `mode:` to "dfsi"
-  * Under `uart:` change the `port:` "/dev/DVMV24". Be sure to add the [udev rules file](https://github.com/tsawyer/dvm-project-notes/blob/main/config/99_dvmv24.rules) to `/etc/udev/rules.d`.
+  * Under `uart:` change the `port:` "/dev/DVMV24". Be sure to add the [udev rules file](https://github.com/tsawyer/dvm-project-notes/blob/main/config/99_dvmv24.rules) to `/etc/udev/rules.d/`.
   * Under `dfsi:` change `diu:` to false
 * Under `iden_table` change `file:` to /opt/dvm/iden_table.dat
 * Under `radio_id:` change `file:` to /opt/dvm/rid_acl.dat
