@@ -15,7 +15,7 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
 * Under `system:`
   * Change `idenity:` to YOUR DVMHost SITE NAME
   * Change `fixedMode:` to true.
-  * Change `rfTalkgroupHang` to 1. Prevents Talkgroup filtering on your DVMHost for duration after you unkey.
+  * Change `rfTalkgroupHang` to 0. Prevents Talkgroup filtering on your DVMHost for duration after you unkey.
   * Under `info:` change to your site, etc.
 * Under `protocols:`
   * Under `dmr:` Change `enable:` to false
