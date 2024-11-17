@@ -8,10 +8,10 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
   * Change `useSyslog:` to true
   * Change `filePath:` to /opt/dvm/log
   * Change `activityFilePath:` to /var/log/dvm
-* Under network:
- - CHANGE `id:` to an **FNE wide unique number**. Your DMR ID (plus 2 digits if needed) should work well. Limit 9 characters.
- - CHANGE `address:` to FNE admin provided IP address.
- - CHANGE `password:` to FNE admin provided password.
+* Under `network:`
+  * CHANGE `id:` to an **FNE wide unique number**. Your DMR ID (plus 2 digits if needed) should work well. Limit 9 characters.
+  * CHANGE `address:` to the FNE admin provided IP address.
+  * CHANGE `password:` to the FNE admin provided password.
 * Under `system:`
   * Change `idenity:` to YOUR DVMHost SITE NAME
   * Change `fixedMode:` to true.
