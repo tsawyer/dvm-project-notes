@@ -23,7 +23,7 @@ systemctl daemon-reload
 
 # DVMHost Update
 This updates the DVMProject amd64 binaries without having to compile it on each server.
- - Note: If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equales the next higher download. Linux tar will extract the files with the .n extension. 
+ - Note: If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equales the next higher download. Linux tar will extract the files with the .n extensionif told to. For example `tar xzvf dvmhost_R04Axx_amd64.tar.gz.1 -C /opt`
 ```
 cd ~
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
