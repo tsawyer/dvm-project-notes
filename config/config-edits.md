@@ -9,7 +9,7 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
   * Change `filePath:` to /opt/dvm/log
   * Change `activityFilePath:` to /var/log/dvm
 * Under `network:`
-  * CHANGE `id:` to an **FNE wide unique number**. Your DMR ID (plus 2 digits if needed) should work well. Limit 9 characters.
+  * CHANGE `id:` to an **FNE wide unique number**. Use your DMR ID (plus 2 digits if needed, limit 9 characters).
   * CHANGE `address:` to the FNE admin provided IP address.
   * CHANGE `password:` to the FNE admin provided password.
   * Change `saveLookups:` to true.
