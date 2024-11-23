@@ -49,13 +49,3 @@ git add dvmhost_R04Axx_amd64.tar.gz
 git commit
 git push
 ```
-
-## Install tarball
-
-Download and install on DVMHost sites.
-
-```
-wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
-tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
-systemctl restart dvmhost
-```
