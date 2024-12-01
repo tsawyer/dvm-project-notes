@@ -12,6 +12,7 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
   * CHANGE `id:` to an **FNE wide unique number**. Use your DMR ID (plus 2 digits if needed, limit 9 characters).
   * CHANGE `address:` to the FNE admin provided IP address.
   * CHANGE `password:` to the FNE admin provided password.
+  * Change `updateLookups:` to true.
   * Change `saveLookups:` to true.
 * Under `system:`
   * Change `idenity:` to *YOUR DVMHost SITE NAME* (limit 9 characters)
