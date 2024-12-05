@@ -4,13 +4,13 @@ These notes are things I need to keep track of for the [DVM Project](https://git
 The folks on Discord and GitHub have nothing to do with what I have posted here and they don't support it.
 
 # DVMHost Install
- - Grab the tarball, install the binaries and example configs in `/opt/dvm`:
+ - Grab the tarball, install the binaries and example configs:
 ```
 cd ~
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
 tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
 ```
-## Configuration
+ - Copy examples and create a place for the logs:
 ```
 cd /opt/dvm
 cp config.example.yml config.yml
