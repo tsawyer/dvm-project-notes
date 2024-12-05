@@ -18,7 +18,7 @@ cp rid_acl.example.dat rid_acl.dat
 mkdir /var/log/dvm
 ```
  - Edit [config.yml](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md).
- - Add [logrotate](https://github.com/tsawyer/dvm-project-notes/blob/main/config/logrotate.md) and [udev rules](https://github.com/tsawyer/dvm-project-notes/blob/main/config/99_dvmv24.rules).
+ - Add [logrotate](https://github.com/tsawyer/dvm-project-notes/blob/main/config/logrotate.md) and [udev rules](https://github.com/tsawyer/dvm-project-notes/blob/main/config/udevrules.md).
  - Install the service:
 ```
 cd /etc/systemd/system
