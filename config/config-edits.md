@@ -8,6 +8,7 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
   * Change `useSyslog:` to true
   * Change `filePath:` to /opt/dvm/log
   * Change `activityFilePath:` to /var/log/dvm
+  * Change `fileRoot:` to dvmhost
 * Under `network:`
   * CHANGE `id:` to an **FNE wide unique number**. Use your DMR ID (plus 2 digits if needed, limit 9 characters).
   * CHANGE `address:` to the FNE admin provided IP address.
@@ -30,6 +31,7 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
   * Under `protocol:` change `mode:` to "dfsi"
   * Under `uart:` change the `port:` "/dev/DVMV24". Be sure to add the [udev rules file](https://github.com/tsawyer/dvm-project-notes/blob/main/config/99_dvmv24.rules) to `/etc/udev/rules.d/`.
   * Under `dfsi:` change `diu:` to false
+  * Change `rssiMappingFile:` to /opt/dvm/RSSI.dat
 * Under `iden_table` change `file:` to /opt/dvm/iden_table.dat
 * Under `radio_id:` change `file:` to /opt/dvm/rid_acl.dat
 * Under `talkgroup_id:` change `file:` to /opt/dvm/talkgroup_rules.yml
