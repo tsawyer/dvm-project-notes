@@ -10,8 +10,10 @@ cd ~
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
 tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
 ```
- - Rename config.example.yml to config.yml.
- - Edit config.yml for the DVMhost settings and FNE connection. See [config-edits.md](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md).
+ - `cd /opt/dvm`
+ - Copy config.example.yml `cp config.example.yml config.yml`.
+ - Edit config.yml for the DVMhost settings. See [config-edits.md](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md).
+ - Create log directory: `mkdir /var/log/dvm`
  - Install the service:
 ```
 cd /etc/systemd/system
