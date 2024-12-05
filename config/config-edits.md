@@ -14,15 +14,15 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
   * CHANGE `password:` to the FNE admin provided password.
   * Change `updateLookups:` to true.
   * Change `saveLookups:` to true.
+* Under `protocols:`
+  * Under `dmr:` Change `enable:` to false
+  * Under `p25:` Insure `enable:` is true
+  * Under `nxdn:` Change `enable:` is false
 * Under `system:`
   * Change `idenity:` to *YOUR DVMHost SITE NAME* (limit 9 characters)
   * Change `fixedMode:` to true.
   * Change `rfTalkgroupHang` to 0. Prevents Talkgroup filtering on your DVMHost for duration after you unkey.
   * Under `info:` change to your site, etc.
-* Under `protocols:`
-  * Under `dmr:` Change `enable:` to false
-  * Under `p25:` Insure `enable:` is true
-  * Under `nxdn:` Change `enable:` is false
 * Under `cwId:`
   * Change `enable:` to false
 * Under `modem:`
