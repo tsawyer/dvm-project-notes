@@ -1,3 +1,5 @@
+Updated to handel both DVMV24 version 1 and 2 boards.
+
 Edit `/etc/udev/rules.d/99_dvmv24.rules`
 
 ```
