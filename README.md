@@ -15,6 +15,7 @@ tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
 cd /opt/dvm
 cp config.example.yml config.yml
 cp rid_acl.example.dat rid_acl.dat
+cp talkgroup_rules.example talkgroup_rules.yml
 mkdir /var/log/dvm
 ```
  - Edit [config.yml](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md).
