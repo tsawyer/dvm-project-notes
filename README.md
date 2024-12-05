@@ -18,6 +18,7 @@ cd /etc/systemd/system
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/config/dvmhost.service
 systemctl daemon-reload
 ```
+ - Enable DVMhost to start at system boot `systemctl enable dvmhost.service`.
  - Start DVMhost `systemctl start dvmhost.service`.
  - View the DVMHost log `journalctl -S today -u dvmhost -f`.
 
