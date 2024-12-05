@@ -14,7 +14,7 @@ tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
  - Copy config.example.yml `cp config.example.yml config.yml`.
  - Edit config.yml DVMhost settings. See [config-edits.md](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md).
  - Create log directory: `mkdir /var/log/dvm`.
- - Add [logrotate](https://github.com/tsawyer/dvm-project-notes/blob/main/config/logrotate.md) and [udev rule](https://github.com/tsawyer/dvm-project-notes/blob/main/config/99_dvmv24.rules).
+ - Add [logrotate](https://github.com/tsawyer/dvm-project-notes/blob/main/config/logrotate.md) and [udev rules](https://github.com/tsawyer/dvm-project-notes/blob/main/config/99_dvmv24.rules).
  - Install the service:
 ```
 cd /etc/systemd/system
