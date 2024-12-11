@@ -29,11 +29,15 @@ systemctl daemon-reload
  - Enable DVMhost to start at system boot `systemctl enable dvmhost.service`.
  - Start DVMhost `systemctl start dvmhost.service`.
  - View the DVMHost log `journalctl -S today -u dvmhost -f`.
-
+ - cron to remove logs older than 3 days:
+```
+crontab -e
+0 0 * * * /usr/bin/find /var/log/dvm -type f -mtime +3 -delete \; > /dev/null 2>&1`
+```
 This complete the install. DVMHost should be running.
 
 # DVMHost Troubleshoot
-Stop the service and run in foreground:
+Stop the service and run in foreground and look for errors:
 ```
 systemctl stop dvmhost
 /opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml
