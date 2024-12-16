@@ -6,7 +6,7 @@ Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favo
 * Under `log:`
   * Change `fileLevel:` to desired level, see comments
   * Change `useSyslog:` to true
-  * Change `filePath:` to /opt/dvm/log
+  * Change `filePath:` to /var/log/dvm
   * Change `activityFilePath:` to /var/log/dvm
   * Change `fileRoot:` to dvmhost
 * Under `network:`
