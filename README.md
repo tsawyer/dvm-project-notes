@@ -24,7 +24,7 @@ mkdir /var/log/dvm
  - Add udev rules: (reboot to activate these rules at some point)
 ```
 cd /etc/udev/rules.d/
-wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/config/99_dvm24.rules
+wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/config/99_dvmv24.rules
 ```
 
  - Install the service:
