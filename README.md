@@ -4,6 +4,7 @@ These notes are things I need to keep track of for the [DVM Project](https://git
 The folks on Discord and GitHub have nothing to do with what I have posted here and they don't support it.
 
 # DVMHost Install
+Do all this as root or with sudo.
  - Grab the tarball, install the binaries and example configs:
 ```
 cd ~
@@ -19,7 +20,13 @@ cp talkgroup_rules.example talkgroup_rules.yml
 mkdir /var/log/dvm
 ```
  - Edit [config.yml](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md).
- - Add [logrotate](https://github.com/tsawyer/dvm-project-notes/blob/main/config/logrotate.md) and [udev rules](https://github.com/tsawyer/dvm-project-notes/blob/main/config/udevrules.md).
+ 
+ - Add udev rules: (reboot to activate these rules at some point)
+```
+cd /etc/udev/rules.d/
+wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/config/99_dvm24.rules
+```
+
  - Install the service:
 ```
 cd /etc/systemd/system
@@ -32,7 +39,7 @@ systemctl daemon-reload
  - cron to remove logs older than 3 days:
 ```
 crontab -e
-0 0 * * * /usr/bin/find /var/log/dvm -type f -mtime +3 -delete \; > /dev/null 2>&1`
+0 0 * * * /usr/bin/find /var/log/dvm/* -type f -mtime +3 -delete > /dev/null 2>&1`
 ```
 This complete the install. DVMHost should be running.
 
