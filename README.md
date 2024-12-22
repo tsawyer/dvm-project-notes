@@ -40,7 +40,7 @@ systemctl daemon-reload
  - View the DVMHost log: `journalctl -S today -u dvmhost -f`.
  - Add cron to remove logs older than 3 days: `crontab -e`
 ```
-0 0 * * * /usr/bin/find /var/log/dvm/* -type f -mtime +3 -delete > /dev/null 2>&1`
+0 0 * * * /usr/bin/find /var/log/dvm/* -type f -mtime +3 -delete > /dev/null 2>&1
 ```
 This completes the install. DVMHost should be running.
 
