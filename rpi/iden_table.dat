@@ -1,0 +1,12 @@
+#
+# This file sets the valid bandplan identity table.
+# (It is recommended to use the included iden_channel_calc.py Python script
+# to generate entries for this file.)
+#
+# ChId,Base Freq,Spacing (khz),Input Offset (mhz),Bandwidth (khz),<newline>
+# WD6AWP Changed line 0 for 431 Mhz. Ch 12 is 431.1125 Mhz
+0,431000000,6.25,5.0,12.5,
+1,762006250,6.25,30.000,12.5,
+15,935001250,6.25,-39.00000,12.5,
+2,450000000,6.25,5.000,12.5,
+3,146000000,6.25,1.000,12.5,
