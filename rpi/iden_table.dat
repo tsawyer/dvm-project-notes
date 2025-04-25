@@ -4,14 +4,15 @@
 # to generate entries for this file.)
 #
 # ChId,Base Freq,Spacing (khz),Input Offset (mhz),Bandwidth (khz),<newline>
-# WD6AWP Changed line 0 for 431 Mhz. Ch 12 is 431.1125 Mhz
-# Line 4 is for 449.4625 Mhz. Ch 1514 (0x5ea) is 449.4625 Mhz.
-0,431000000,6.25,5.0,12.5,
+# WD6AWP Added
+# Line 4 is for 449.4625 Mhz. Ch 1514 (0x5ea) is 449.4625 -5 Mhz.
+# Line 5 for 431 Mhz. Ch 12 is 431.1125 Mhz simplex
+0,851006250,6.25,-45.000,12.5,
 1,762006250,6.25,30.000,12.5,
 15,935001250,6.25,-39.00000,12.5,
 2,450000000,6.25,5.000,12.5,
 3,146000000,6.25,1.000,12.5,
 4,440000000,6.25,-5.000,12.5,
-
+5,431000000,6.25,0.0,12.5,
 
 # See https://dvmproject.io/iden-calc-web/
