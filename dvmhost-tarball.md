@@ -1,5 +1,7 @@
 # Setup DVMhost "build" server
 
+This reminds me how to update the tarball on my repo.
+
 A tarball build is pretty much just a normal build with two C librarys preloaded to speed up repeateaded builds.
 
 Info on the two added libs:
