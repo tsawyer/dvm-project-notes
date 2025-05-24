@@ -33,6 +33,7 @@ mkdir build
 cd build
 cmake ..
 make
+make strip
 ```
 
 ## Install Files
