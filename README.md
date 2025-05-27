@@ -5,11 +5,12 @@ The folks on the DVM Discord and GitHub have nothing to do with what I have post
 
 # DVMHost Install
 Do all this as root or with sudo.
+ - The tarball name changes with updates. Be sure to check GitHub for the latest. 
  - Grab the latest tarball, install the binaries and example configs:
 ```
 cd ~
-wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
-tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
+wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Hxx_amd64.tar.gz
+tar xzvf dvmhost_R04Hxx_amd64.tar.gz -C /opt
 ```
  - Copy examples:
 ```
@@ -53,11 +54,12 @@ systemctl stop dvmhost
 
 # DVMHost Update
 This updates the DVMProject amd64 binaries without having to compile it on each server.
- - Note: If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equales the next higher download. Linux tar will extract the files with the .n extension if told to. For example `tar xzvf dvmhost_R04Axx_amd64.tar.gz.1 -C /opt`
+ - If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equales the next higher download. Linux tar will extract the files with the .n extension if told to. For example `tar xzvf dvmhost_R04Axx_amd64.tar.gz.1 -C /opt`
+ - The tarball name changes with updates. Be sure to check GitHub for the latest. 
 ```
 cd ~
-wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Axx_amd64.tar.gz
-tar xzvf dvmhost_R04Axx_amd64.tar.gz -C /opt
+wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Hxx_amd64.tar.gz
+tar xzvf dvmhost_R04Hxx_amd64.tar.gz -C /opt
 systemctl restart dvmhost.service
 ```
 Tada!
