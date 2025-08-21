@@ -9,8 +9,8 @@ Do all this as root or with sudo.
  - Grab the latest tarball, install the binaries and example configs:
 ```
 cd ~
-wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Hxx_amd64.tar.gz
-tar xzvf dvmhost_R04Hxx_amd64.tar.gz -C /opt
+wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Jxx_x86_64.tar.gz
+tar xzvf tarball/dvmhost_R04Jxx_x86_64.tar.gz -C /opt
 ```
  - Copy examples:
 ```
