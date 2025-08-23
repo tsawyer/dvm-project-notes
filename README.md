@@ -22,7 +22,7 @@ cp talkgroup_rules.example.yml talkgroup_rules.yml
 ```
  - Create a place for the logs: `mkdir /var/log/dvm`
  - Edit [config.yml](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md).
- - Edit talkgroup_rules.yml to add and/or remove rules as desired. 
+ - Edit talkgroup_rules.yml to add and/or remove rules as desired. Normaly talkgroup rules come from the FNE so this step is optional.
  
  - Add udev rules:
 ```
