@@ -5,7 +5,7 @@ The folks on the DVM Discord and GitHub have nothing to do with what I have post
 
 # DVMHost Install
 Do all this as root or with sudo.
- - The tarball name changes with updates. Be sure to check GitHub for the latest. 
+ - The tarball name changes with updates. Be sure to check GitHub for the latest.
  - Grab the latest tarball, install the binaries and example configs:
 ```
 cd ~
@@ -21,9 +21,9 @@ cp iden_table.example.dat iden_table.dat
 cp talkgroup_rules.example.yml talkgroup_rules.yml
 ```
  - Create a place for the logs: `mkdir /var/log/dvm`
- - Edit [config.yml](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md).
+ - Edit [config.yml](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md). We typically provide a template config for our users requiring only minor changes.
  - Edit talkgroup_rules.yml to add and/or remove rules as desired. Normaly talkgroup rules come from the FNE so this step is optional.
- 
+
  - Add udev rules:
 ```
 cd /etc/udev/rules.d/
@@ -51,12 +51,12 @@ Stop the service and run in foreground and look for errors:
 ```
 systemctl stop dvmhost
 /opt/dvm/bin/dvmhost -f -c /opt/dvm/config.yml
-``` 
+```
 
 # DVMHost Update
 This updates the DVMProject amd64 binaries without having to compile it on each server.
  - If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equales the next higher download. Linux tar will extract the files with the .n extension if told to. For example `tar xzvf dvmhost_R04Axx_amd64.tar.gz.1 -C /opt`
- - The tarball name changes with updates. Be sure to check GitHub for the latest. 
+ - The tarball name changes with updates. Be sure to check GitHub for the latest.
 ```
 cd ~
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Hxx_amd64.tar.gz
