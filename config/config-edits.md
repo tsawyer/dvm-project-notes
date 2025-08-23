@@ -1,6 +1,8 @@
 ## DMVHost Configuration
 
-Edit the DVMHost configuration file with `nano /opt/dvm/config.yml` or your favorite editor. These changes are needed to login to the FNE and display the host information.
+#### This is out of date as new settings and comments have been added to the example conf file. We typically provide our users with a current 'template' config requiring only a few changes.
+
+Copy the DVMHost example configuration file to `/opt/dvm/config.yml` and edit with your favorite editor. 
 
 * Change `daemon:` to true
 * Under `log:`
