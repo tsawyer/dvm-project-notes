@@ -10,7 +10,7 @@ Do all this as root or with sudo.
 ```
 cd ~
 wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Jxx_x86_64.tar.gz
-tar xzvf tarball/dvmhost_R04Jxx_x86_64.tar.gz -C /opt
+tar xzvf dvmhost_R04Jxx_x86_64.tar.gz -C /opt
 ```
  - Copy examples:
 ```
