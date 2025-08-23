@@ -17,6 +17,7 @@ tar xzvf dvmhost_R04Jxx_x86_64.tar.gz -C /opt
 cd /opt/dvm
 cp config.example.yml config.yml
 cp rid_acl.example.dat rid_acl.dat
+cp iden_table.example.dat iden_table.dat
 cp talkgroup_rules.example.yml talkgroup_rules.yml
 ```
  - Create a place for the logs: `mkdir /var/log/dvm`
