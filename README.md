@@ -55,12 +55,10 @@ systemctl stop dvmhost
 
 # DVMHost Update
 This updates the DVMProject amd64 binaries without having to compile it on each server.
- - If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equales the next higher download. Linux tar will extract the files with the .n extension if told to. For example `tar xzvf dvmhost_R04Axx_amd64.tar.gz.1 -C /opt`
+ - If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equales the next higher download. Linux tar will extract the files with the .n extension if told to. For example `tar xzvf dvmhost_xxxxx_amd64.tar.gz.1 -C /opt`
  - The tarball name changes with updates. Be sure to check GitHub for the latest.
+ - Grab the latest tarball and untar it per the install above. Then restart the service:
 ```
-cd ~
-wget https://raw.githubusercontent.com/tsawyer/dvm-project-notes/main/tarball/dvmhost_R04Hxx_amd64.tar.gz
-tar xzvf dvmhost_R04Hxx_amd64.tar.gz -C /opt
 systemctl restart dvmhost.service
 ```
 Tada!
