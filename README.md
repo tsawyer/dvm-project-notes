@@ -9,7 +9,8 @@ Do all this as root or with sudo.
  - Grab the latest tarball, install the binaries and example configs:
 ```
 cd ~
-wget https://github.com/DVMProject/dvmhost/releases/download/2025-09-03/dvmhost-2025-09-03-amd64.tar.gz
+#wget https://github.com/DVMProject/dvmhost/releases/download/2025-09-03/dvmhost-2025-09-03-amd64.tar.gz
+wget https://github.com/DVMProject/dvmhost/releases/download/2025-12-03/dvmhost-2025-12-03-amd64.tar.gz
 tar xzvf dvmhost-2025-09-03-amd64.tar.gz -C /opt
 ```
  - Copy examples:
