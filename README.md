@@ -11,7 +11,7 @@ Do all this as root or with sudo.
 cd ~
 #wget https://github.com/DVMProject/dvmhost/releases/download/2025-09-03/dvmhost-2025-09-03-amd64.tar.gz
 wget https://github.com/DVMProject/dvmhost/releases/download/2025-12-03/dvmhost-2025-12-03-amd64.tar.gz
-tar xzvf dvmhost-2025-09-03-amd64.tar.gz -C /opt
+tar xzvf dvmhost-2025-12-03-amd64.tar.gz -C /opt
 ```
  - Copy examples:
 ```
