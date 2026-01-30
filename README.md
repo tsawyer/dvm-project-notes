@@ -40,11 +40,12 @@ Portions Copyright (c) 2015-2021 by Jonathan Naylor, G4KLX and others
  - Copy examples:
 ```
 cd /opt/dvm
-cp config.example.yml config.yml Note: I need to update this step. I'll provide a current boilerplate.
 cp rid_acl.example.dat rid_acl.dat
 cp iden_table.example.dat iden_table.dat
 cp talkgroup_rules.example.yml talkgroup_rules.yml
 ```
+ - Contact author for DVMHost configuration boilerplate and instructions.
+ - Contact author for Wireguard configuration boilerplate and instructions. 
  - Create a place for the logs: `mkdir /var/log/dvm`
  - Edit [config.yml](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md). We typically provide a template config for our users requiring only minor changes.
  - Edit talkgroup_rules.yml to add and/or remove rules as desired. Normaly talkgroup rules come from the FNE so this step is optional.
