@@ -7,7 +7,7 @@ The folks on the DVM Discord and GitHub have nothing to do with what I have post
 README updated to install recent development DVM tarball and a development library.
  - Install development library `libdw-deb`.
  - Download and extract development tarball.
- - Install Wireguard per instructions, tbd.
+ - Install Wireguard per instructions.
 
 # DVMHost Install
 Do all this as root or with sudo.
