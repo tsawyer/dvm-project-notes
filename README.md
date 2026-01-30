@@ -7,12 +7,12 @@ The folks on the DVM Discord and GitHub have nothing to do with what I have post
 This README is updated to install recent development DVM tarball and a development library. Both are documented in the "DVMHost Install" heading below.
  - Requires installing development library `libdw-deb`.
  - Download development tarball.
- - Install Wireguard per "Wireguard" below.
+ - Install Wireguard per instructions, tbd.
 
 # DVMHost Install
 Do all this as root or with sudo.
- - The tarball name changes with updates. Be sure to check GitHub for the latest.
- - Grab the latest tarball, install the binaries and example configs:
+ - The tarball name changes with updates.
+ - Grab the latest uncommented tarball.
 ```
 cd ~
 # Last known stable tarball. Use if the whole network converts.
@@ -41,7 +41,7 @@ Portions Copyright (c) 2015-2021 by Jonathan Naylor, G4KLX and others
  - Copy examples:
 ```
 cd /opt/dvm
-cp config.example.yml config.yml
+cp config.example.yml config.yml Note: I need to update this step. I'll provide a current boilerplate.
 cp rid_acl.example.dat rid_acl.dat
 cp iden_table.example.dat iden_table.dat
 cp talkgroup_rules.example.yml talkgroup_rules.yml
