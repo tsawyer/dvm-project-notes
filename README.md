@@ -9,11 +9,15 @@ README updated to install recent development DVM tarball and a development libra
  - Download and extract development tarball.
  - Install Wireguard per instructions.
 
+
 # DVMHost Install
 Do all this as root or with sudo.
- - The tarball name changes with updates. Grab the latest uncommented tarball.
+- cd to home.
 ```
 cd ~
+```
+ - The tarball name changes with updates. Grab the latest uncommented tarball.
+```
 # Last known stable tarball. Use if the whole network converts.
 # wget https://github.com/DVMProject/dvmhost/releases/download/2025-09-03/dvmhost-2025-09-03-amd64.tar.gz
 # tar xzvf dvmhost-2025-09-03-amd64.tar.gz -C /opt
