@@ -3,15 +3,40 @@ These notes are things I need to keep track of for the [DVM Project](https://git
 99.9% of this info was gleaned from the [DVM Project Discord Server](https://discord.gg/3pBe8xgrEz).
 The folks on the DVM Discord and GitHub have nothing to do with what I have posted here and they don't support it.
 
+# READEME Update
+This README is updated to install recent development DVM tarball and a development library. Both are documented in the "DVMHost Install" heading below.
+ - Requires installing development library `libdw-deb`.
+ - Download development tarball.
+ - Install Wireguard per "Wireguard" below.
+
 # DVMHost Install
 Do all this as root or with sudo.
  - The tarball name changes with updates. Be sure to check GitHub for the latest.
  - Grab the latest tarball, install the binaries and example configs:
 ```
 cd ~
-#wget https://github.com/DVMProject/dvmhost/releases/download/2025-09-03/dvmhost-2025-09-03-amd64.tar.gz
-wget https://github.com/DVMProject/dvmhost/releases/download/2025-12-03/dvmhost-2025-12-03-amd64.tar.gz
-tar xzvf dvmhost-2025-12-03-amd64.tar.gz -C /opt
+# Last known stable tarball. Use if the whole network converts.
+# wget https://github.com/DVMProject/dvmhost/releases/download/2025-09-03/dvmhost-2025-09-03-amd64.tar.gz
+# tar xzvf dvmhost-2025-09-03-amd64.tar.gz -C /opt
+
+# We've had hosts stop receiving network traffic ("go to sleep")  with this tarball
+# wget https://github.com/DVMProject/dvmhost/releases/download/2025-12-03/dvmhost-2025-12-03-amd64.tar.gz
+# tar xzvf dvmhost-2025-12-03-amd64.tar.gz
+
+# We're currently using this tarball and steps.
+wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_R05A04_dev_x86_64.tar.gz
+tar xzvf dvmhost_R05A04_dev_x86_64.tar.gz -C /opt
+apt install libdw-dev
+```
+ - Test for correct version installed
+ ```
+ /opt/dvm/bin/dvmhost -v
+ ```
+ Make sure the result includes the correct version and hash: `R05A04 a43efddc`.
+ ```
+ Digital Voice Modem (DVM) Host 05.04A (R05A04 a43efddc) (built Jan 26 2026 20:30:24)
+Copyright (c) 2017-2026 Bryan Biedenkapp, N2PLL and DVMProject (https://github.com/dvmproject) Authors.
+Portions Copyright (c) 2015-2021 by Jonathan Naylor, G4KLX and others
 ```
  - Copy examples:
 ```
@@ -56,7 +81,7 @@ systemctl stop dvmhost
 
 # DVMHost Update
 This updates the DVMProject amd64 binaries without having to compile it on each server.
- - If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equales the next higher download. Linux tar will extract the files with the .n extension if told to. For example `tar xzvf dvmhost_xxxxx_amd64.tar.gz.1 -C /opt`
+ - If the tarball was previously downloaded the old tarball will not be overwritten. Instead the new tarball will be saved with a **.n** extension, where n equals the next higher download. Linux tar will extract the files with the .n extension if told to. For example `tar xzvf dvmhost_<CURRENT VERSION>.tar.gz<OPTIONAL .n> -C /opt`
  - The tarball name changes with updates. Be sure to check GitHub for the latest.
  - Grab the latest tarball and untar it per the install above. Then restart the service:
 ```
