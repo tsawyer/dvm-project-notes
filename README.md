@@ -31,7 +31,7 @@ apt install libdw-dev
  ```
  /opt/dvm/bin/dvmhost -v
  ```
- Make sure the result include the correct version and hash `R05A04 a43efddc`.
+ Make sure the version and hash are `R05A04 a43efddc`.
  ```
  Digital Voice Modem (DVM) Host 05.04A (R05A04 a43efddc) (built Jan 26 2026 20:30:24)
 Copyright (c) 2017-2026 Bryan Biedenkapp, N2PLL and DVMProject (https://github.com/dvmproject) Authors.
@@ -45,10 +45,9 @@ cp iden_table.example.dat iden_table.dat
 cp talkgroup_rules.example.yml talkgroup_rules.yml
 ```
  - Contact author for DVMHost configuration boilerplate and instructions.
- - Contact author for Wireguard configuration boilerplate and instructions. 
+ - Contact author for Wireguard configuration boilerplate and instructions.
  - Create a place for the logs: `mkdir /var/log/dvm`
- - Edit [config.yml](https://github.com/tsawyer/dvm-project-notes/blob/main/config/config-edits.md). We typically provide a template config for our users requiring only minor changes.
- - Edit talkgroup_rules.yml to add and/or remove rules as desired. Normaly talkgroup rules come from the FNE so this step is optional.
+ - Normaly talkgroup rules come from the FNE so no changes to talkgroup_rules.yml are necessary.
 
  - Add udev rules:
 ```
