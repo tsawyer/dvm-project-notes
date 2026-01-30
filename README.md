@@ -36,7 +36,6 @@ Portions Copyright (c) 2015-2021 by Jonathan Naylor, G4KLX and others
 ```
 Make sure the version and hash are `R05A04 a43efddc`.
 
-```
  - Copy examples:
 ```
 cd /opt/dvm
