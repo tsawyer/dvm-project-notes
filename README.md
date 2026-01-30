@@ -3,16 +3,15 @@ These notes are things I need to keep track of for the [DVM Project](https://git
 99.9% of this info was gleaned from the [DVM Project Discord Server](https://discord.gg/3pBe8xgrEz).
 The folks on the DVM Discord and GitHub have nothing to do with what I have posted here and they don't support it.
 
-# READEME Update
-This README is updated to install recent development DVM tarball and a development library. Both are documented in the "DVMHost Install" heading below.
- - Requires installing development library `libdw-deb`.
- - Download development tarball.
+## README Update 2026-01-29
+README updated to install recent development DVM tarball and a development library.
+ - Install development library `libdw-deb`.
+ - Download and extract development tarball.
  - Install Wireguard per instructions, tbd.
 
 # DVMHost Install
 Do all this as root or with sudo.
- - The tarball name changes with updates.
- - Grab the latest uncommented tarball.
+ - The tarball name changes with updates. Grab the latest uncommented tarball.
 ```
 cd ~
 # Last known stable tarball. Use if the whole network converts.
