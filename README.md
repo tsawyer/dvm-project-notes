@@ -31,7 +31,7 @@ wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_R05A0
 tar xzvf dvmhost_R05A04_dev_x86_64.tar.gz -C /opt
 apt install libdw-dev
 ```
- - Test for correct version installed. Make sure the version and hash matches `(R05A04 a43efddc)`.
+ - Test for correct version installed. Make sure the version and hash matches `(R05A04 c044e42d)`.
 ```
 /opt/dvm/bin/dvmhost -v
 ```
