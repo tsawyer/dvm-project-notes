@@ -26,10 +26,10 @@ cd ~
 # wget https://github.com/DVMProject/dvmhost/releases/download/2025-12-03/dvmhost-2025-12-03-amd64.tar.gz
 # tar xzvf dvmhost-2025-12-03-amd64.tar.gz
 
-# We're currently using this tarball and additional library.
-wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_R05A04_dev_x86_64.tar.gz
-tar xzvf dvmhost_R05A04_dev_x86_64.tar.gz -C /opt
-apt install libdw-dev
+# We're currently using this tarball.  Additional library no longer needed.
+wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_R05A04_62c43504_x86_64.tar.gz
+tar xzvf dvmhost_R05A04_62c43504_x86_64.tar.gz -C /opt
+# apt install libdw-dev
 ```
  - Test for correct version installed. Make sure the version and hash matches `05.04A (R05A04 b9727512) (built Feb  6 2026 12:14:43)`.
 ```
