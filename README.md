@@ -31,7 +31,7 @@ wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_R05A0
 tar xzvf dvmhost_R05A04_62c43504_x86_64.tar.gz -C /opt
 # apt install libdw-dev
 ```
- - Test for correct version installed. Make sure the version and hash matches `05.04A (R05A04 b9727512) (built Feb  6 2026 12:14:43)`.
+ - Test for correct version installed. Make sure the version and hash matches `Digital Voice Modem (DVM) Host 05.04A (R05A04 62c43504) (built Mar  5 2026 10:32:46)`.
 ```
 /opt/dvm/bin/dvmhost -v
 ```
