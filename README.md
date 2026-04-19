@@ -18,20 +18,11 @@ cd ~
 ```
  - The tarball name changes with updates. Grab the latest uncommented tarball.
 ```
-# Last known stable tarball. Use if the whole network converts.
-# wget https://github.com/DVMProject/dvmhost/releases/download/2025-09-03/dvmhost-2025-09-03-amd64.tar.gz
-# tar xzvf dvmhost-2025-09-03-amd64.tar.gz -C /opt
-
-# We've had hosts stop receiving network traffic ("go to sleep")  with this tarball.
-# wget https://github.com/DVMProject/dvmhost/releases/download/2025-12-03/dvmhost-2025-12-03-amd64.tar.gz
-# tar xzvf dvmhost-2025-12-03-amd64.tar.gz
-
 # We're currently using this tarball.  Additional library no longer needed.
-wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_R05A04_62c43504_x86_64.tar.gz
-tar xzvf dvmhost_R05A04_62c43504_x86_64.tar.gz -C /opt
-# apt install libdw-dev
+wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_8776ebfa_x86_64.tar.gz
+tar xzvf dvmhost_8776ebfa_x86_64.tar.gz -C /opt
 ```
- - Test for correct version installed. Make sure the version and hash matches `Digital Voice Modem (DVM) Host 05.04A (R05A04 62c43504) (built Mar  5 2026 10:32:46)`.
+ - Test for correct version installed. Make sure the version and hash matches `Digital Voice Modem (DVM) Host 05.04A (R05A04 8776ebfa) . . .`.
 ```
 /opt/dvm/bin/dvmhost -v
 ```
