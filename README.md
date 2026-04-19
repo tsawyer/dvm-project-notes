@@ -18,7 +18,7 @@ cd ~
 ```
  - The tarball name changes with updates. Grab the latest uncommented tarball.
 ```
-# We're currently using this tarball.  Additional library no longer needed.
+# We're currently using this tarball.
 wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_8776ebfa_x86_64.tar.gz
 tar xzvf dvmhost_8776ebfa_x86_64.tar.gz -C /opt
 ```
