@@ -16,9 +16,8 @@ Do all this as root or with sudo.
 ```
 cd ~
 ```
- - The tarball name changes with updates. Grab the latest uncommented tarball.
+ - The tarball name changes with updates. This might be our latest. :-)
 ```
-# We're currently using this tarball.
 wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_8776ebfa_x86_64.tar.gz
 tar xzvf dvmhost_8776ebfa_x86_64.tar.gz -C /opt
 ```
