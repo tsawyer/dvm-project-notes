@@ -17,7 +17,7 @@ cd ~
 wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_ce1ff533_x86_64.tar.gz
 tar xzvf dvmhost_ce1ff533_x86_64.tar.gz -C /opt
 ```
- - Test for correct version installed. Make sure the version and hash matches `Digital Voice Modem (DVM) Host 05.04A (R05A04 8776ebfa) . . .`.
+ - Test for correct version installed. Make sure the version and hash matches `Digital Voice Modem (DVM) Host 05.04A (R05A04 <latest> . . .`.
 ```
 /opt/dvm/bin/dvmhost -v
 ```
