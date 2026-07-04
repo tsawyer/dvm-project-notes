@@ -3,8 +3,8 @@ These notes are things I need to keep track of for the [DVM Project](https://git
 99.9% of this info was gleaned from the [DVM Project Discord Server](https://discord.gg/3pBe8xgrEz).
 The folks on the DVM Discord and GitHub have nothing to do with what I have posted here and they don't support it.
 
-## README Update 2026-04-19
-README updated to install [DFSI Improvements](https://github.com/tsawyer/dvmhost/blob/codex/legacy-dfsi-clean/docs/legacy-dfsi-clean-dfsi-improvements.md) DVM tarball.
+## README Update 2026-07-04
+Update to latest tarball.
 
 # DVMHost Install
 Do all this as root or with sudo.
@@ -14,8 +14,8 @@ cd ~
 ```
  - The tarball name changes with updates. This might be our latest. :-)
 ```
-wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_8776ebfa_x86_64.tar.gz
-tar xzvf dvmhost_8776ebfa_x86_64.tar.gz -C /opt
+wget https://github.com/tsawyer/dvm-project-notes/raw/main/tarball/dvmhost_ce1ff533_x86_64.tar.gz
+tar xzvf dvmhost_ce1ff533_x86_64.tar.gz -C /opt
 ```
  - Test for correct version installed. Make sure the version and hash matches `Digital Voice Modem (DVM) Host 05.04A (R05A04 8776ebfa) . . .`.
 ```
